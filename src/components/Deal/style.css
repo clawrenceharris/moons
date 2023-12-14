@@ -1,0 +1,25 @@
+.deal-item {
+    padding: 30px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    height: 200px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 160%;
+
+}
+
+.deal-container a {
+    color: darkgray;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.deal-container {
+    text-align: center;
+    margin: 10px 0px;
+}

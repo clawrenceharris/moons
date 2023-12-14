@@ -1,0 +1,22 @@
+#new-arrivals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.banner {
+    height: 60vh;
+    background-color: var(--accent-color);
+}
+
+@media only screen and (max-width: 1024px) {
+    #new-arrivals-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    #new-arrivals-grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+}

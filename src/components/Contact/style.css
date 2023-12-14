@@ -1,0 +1,12 @@
+.contact-content a {
+    color: #7F0014;
+    text-decoration: underline;
+}
+
+.contact-content span {
+    color: #E20007;
+}
+
+.contact-content {
+    height: 50vh
+}
