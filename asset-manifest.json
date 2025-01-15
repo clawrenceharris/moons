@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/moons/static/css/main.ca0084e8.css",
+    "main.css": "/moons/static/css/main.3f3edc89.css",
     "main.js": "/moons/static/js/main.1a9da11a.js",
     "static/media/moons-shoe-rack.webp": "/moons/static/media/moons-shoe-rack.87d489b11d99bfd7cb3e.webp",
     "static/media/shoe3.webp": "/moons/static/media/shoe3.c2dd98563e2278d9d1c1.webp",
@@ -23,11 +23,11 @@
     "static/media/fugazone-regular-webfont.woff2": "/moons/static/media/fugazone-regular-webfont.840b6fd296d536cb6cce.woff2",
     "static/media/new-arrivals-banner.jpg": "/moons/static/media/new-arrivals-banner.b6329dbdeb05fd963538.jpg",
     "index.html": "/moons/index.html",
-    "main.ca0084e8.css.map": "/moons/static/css/main.ca0084e8.css.map",
+    "main.3f3edc89.css.map": "/moons/static/css/main.3f3edc89.css.map",
     "main.1a9da11a.js.map": "/moons/static/js/main.1a9da11a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ca0084e8.css",
+    "static/css/main.3f3edc89.css",
     "static/js/main.1a9da11a.js"
   ]
 }
