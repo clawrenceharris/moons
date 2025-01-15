@@ -1,10 +1,8 @@
 {
   "files": {
-    "main.css": "/moons/static/css/main.a82a9b24.css",
-    "main.js": "/moons/static/js/main.ada85398.js",
-    "static/js/787.0155ae55.chunk.js": "/moons/static/js/787.0155ae55.chunk.js",
+    "main.css": "/moons/static/css/main.33732094.css",
+    "main.js": "/moons/static/js/main.148c6c8a.js",
     "static/media/moons-shoe-rack.webp": "/moons/static/media/moons-shoe-rack.87d489b11d99bfd7cb3e.webp",
-    "static/media/shoe1.png": "/moons/static/media/shoe1.5c58d1ca794e4f9217cb.png",
     "static/media/shoe3.webp": "/moons/static/media/shoe3.c2dd98563e2278d9d1c1.webp",
     "static/media/shoe5.webp": "/moons/static/media/shoe5.21ef174b183afbefe00d.webp",
     "static/media/shoe2.webp": "/moons/static/media/shoe2.a6ff7ac818d6782805c2.webp",
@@ -24,14 +22,12 @@
     "static/media/foot-measuring.png": "/moons/static/media/foot-measuring.d740fbdbdf0e42255c8d.png",
     "static/media/fugazone-regular-webfont.woff2": "/moons/static/media/fugazone-regular-webfont.840b6fd296d536cb6cce.woff2",
     "static/media/new-arrivals-banner.jpg": "/moons/static/media/new-arrivals-banner.b6329dbdeb05fd963538.jpg",
-    "static/media/close-white.png": "/moons/static/media/close-white.230ab331033e514aa0b2.png",
     "index.html": "/moons/index.html",
-    "main.a82a9b24.css.map": "/moons/static/css/main.a82a9b24.css.map",
-    "main.ada85398.js.map": "/moons/static/js/main.ada85398.js.map",
-    "787.0155ae55.chunk.js.map": "/moons/static/js/787.0155ae55.chunk.js.map"
+    "main.33732094.css.map": "/moons/static/css/main.33732094.css.map",
+    "main.148c6c8a.js.map": "/moons/static/js/main.148c6c8a.js.map"
   },
   "entrypoints": [
-    "static/css/main.a82a9b24.css",
-    "static/js/main.ada85398.js"
+    "static/css/main.33732094.css",
+    "static/js/main.148c6c8a.js"
   ]
 }
