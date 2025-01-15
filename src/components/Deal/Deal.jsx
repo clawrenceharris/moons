@@ -8,7 +8,7 @@ function Deal({ color, titleA, titleB }) {
         <h5 style={{ fontWeight: "normal" }}>{titleA}</h5>
         <h3>{titleB}</h3>
       </div>
-      <a href="#">Shop Now!</a>
+      <span href="#">Shop Now!</span>
     </div>
   );
 }

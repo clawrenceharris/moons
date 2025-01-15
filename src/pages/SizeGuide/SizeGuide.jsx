@@ -3,15 +3,14 @@ import measuringGuide from "../../assets/images/foot-measuring.png";
 import { useLocation } from "react-router-dom";
 import { SizeChart } from "../../components";
 import "./SizeGuide.css";
-function SizeGuide() {
+function SizeGuide({ sizes }) {
   const [sizeType, setSizeType] = useState("US");
   const [unitType, setUnitType] = useState("IN");
   const location = useLocation();
   const product = location.state;
   const selectBox = document.getElementById("size-select");
-  const selectedValue = selectBox.value;
+  const selectedValue = selectBox?.value;
   useEffect(() => {
-    console.log(selectedValue);
     setSizeType(selectedValue);
   }, [selectBox, selectedValue]);
 
@@ -32,20 +31,18 @@ function SizeGuide() {
               </select>
             </div>
 
-            <a
-              href="#"
+            <button
               onClick={() => setUnitType("IN")}
               className={unitType === "IN" ? "in active-unit" : "in"}
             >
               IN
-            </a>
-            <a
-              href="#"
+            </button>
+            <button
               onClick={() => setUnitType("CM")}
               className={unitType === "CM" ? "cm active-unit" : "cm"}
             >
               CM
-            </a>
+            </button>
 
             <div></div>
           </div>

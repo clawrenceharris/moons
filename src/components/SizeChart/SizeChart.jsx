@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import {
   UKSizes,
   USSizes,
@@ -9,26 +9,9 @@ import {
 import "./SizeChart.css";
 
 function SizeChart({ product, sizeType, unitType }) {
-  const updateTable = () => {
+  const updateTable = useCallback(() => {
     var tableBody = document.getElementById("table-body");
-    const tableData = getTableData();
-
-    tableBody.innerHTML = "";
-
-    // Build the new table
-    tableData.forEach(function (row) {
-      var newRow = document.createElement("tr");
-      tableBody.appendChild(newRow);
-      row.forEach(function (cell) {
-        var newCell = document.createElement("td");
-        newCell.textContent = cell;
-        console.log({ cell });
-        newRow.appendChild(newCell);
-      });
-    });
-  };
-  const getTableData = () => {
-    const data = [];
+    const tableData = [];
 
     for (let i = 0; i < labelSizes.length; i++) {
       const row = [];
@@ -39,15 +22,26 @@ function SizeChart({ product, sizeType, unitType }) {
         else row.push(UKSizes[i]);
         if (unitType === "IN") row.push(footLengthsIN[i]);
         else row.push(footLengthsCM[i]);
-        data.push(row);
+        tableData.push(row);
       }
-    }
+      tableBody.innerHTML = "";
 
-    return data;
-  };
+      // Build the new table
+      tableData.forEach(function (row) {
+        var newRow = document.createElement("tr");
+        tableBody.appendChild(newRow);
+        row.forEach(function (cell) {
+          var newCell = document.createElement("td");
+          newCell.textContent = cell;
+          console.log({ cell });
+          newRow.appendChild(newCell);
+        });
+      });
+    }
+  }, [sizeType, unitType, product.sizes]);
   useEffect(() => {
     updateTable();
-  }, [sizeType, unitType, updateTable]);
+  }, [updateTable]);
 
   return (
     <table>

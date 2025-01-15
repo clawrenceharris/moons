@@ -15,7 +15,7 @@ function Category({ type }) {
       <div className="overlay">
         {type === "men" ? <h1>Men</h1> : <h1>Women</h1>}
         <div className="shop-now">
-          <a href="#">Shop Now</a>
+          <span href="#">Shop Now</span>
           <img src={arrow} alt="right arrow" />
         </div>
       </div>

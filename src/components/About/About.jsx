@@ -16,7 +16,7 @@ function About() {
           “sneakerhead” in all of us. With a strong history of sneaker
           prominence, we spark discovery and ignite the power of sneaker culture
           through our portfolio of innovative designs for men and woman.{" "}
-          <a href=""> Learn More</a>.
+          <span> Learn More</span>.
         </p>
       </div>
       <img src={moons_shoes} alt="Shoe rack at Moons store" />

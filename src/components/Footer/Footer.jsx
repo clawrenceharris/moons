@@ -25,9 +25,9 @@ function Footer() {
           </dt>
 
           <dd>
-            <a href="#">About Us</a>
-            <a href="#">Career Opportunities</a>
-            <a href="#">Privacy Policy</a>
+            <button>About Us</button>
+            <button>Career Opportunities</button>
+            <button>Privacy Policy</button>
           </dd>
         </div>
         <div>
@@ -36,9 +36,9 @@ function Footer() {
             <h3>Customer Support</h3>
           </dt>
           <dd>
-            <a href="#">Ordering Help</a>
-            <a href="#">Make a Suggestion</a>
-            <a href="#">FAQ's</a>
+            <button>Ordering Help</button>
+            <button>Make a Suggestion</button>
+            <button>FAQ's</button>
           </dd>
         </div>
         <div>

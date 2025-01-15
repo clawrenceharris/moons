@@ -1,5 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { ShoppingCart } from "../components";
 
 const CartContext = createContext({});
 
@@ -102,7 +103,13 @@ export function CartProvider({ children }) {
         onCheckout,
       }}
     >
-      {/* <ShoppingCart isCartOpen={isCartOpen} onCheckoutPress={() => { setIsCartOpen(false); setCheckout(true) }} /> */}
+      <ShoppingCart
+        isCartOpen={isCartOpen}
+        onCheckoutPress={() => {
+          setIsCartOpen(false);
+          setCheckout(true);
+        }}
+      />
 
       {children}
     </CartContext.Provider>

@@ -8,9 +8,9 @@ function Contact() {
         Contact <span>Us</span>
       </h2>
       <br />
-      <a href="#">
+      <span>
         <h4>Moons Inc. Headquaters</h4>
-      </a>
+      </span>
       <br />
       <p>1028 2nd Street Sacramento, CA 95814</p>
       <br />
