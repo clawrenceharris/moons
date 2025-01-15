@@ -246,10 +246,7 @@ label {
   padding-right: 1em;
   margin: 20px 0 5px 0;
 }
-a,
-span {
-  color: var(--accent-color);
-}
+
 .text-input {
   display: block;
   border-radius: 3px;
