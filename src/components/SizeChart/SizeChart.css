@@ -1,0 +1,26 @@
+table,
+th,
+td {
+    border: 1px solid #00000015;
+    border-collapse: collapse;
+    padding: 10px;
+
+
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+thead {
+    background-color: #E2000715;
+}
+
+td:first-of-type {
+    background-color: #E2000715;
+}

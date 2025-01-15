@@ -1,0 +1,125 @@
+.cart-menu .checkout-btn {
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+
+}
+
+.cart-heading {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-heading img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.close {
+    cursor: pointer;
+}
+
+#cart-preview {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    background-color: white;
+    z-index: 99;
+    padding: 20px;
+    transition: opacity .2s ease-in-out;
+    min-width: 360px;
+    box-shadow: 5px 5px 20px #00000050;
+}
+
+
+.cart-menu div:first-of-type {
+    transition: .2s ease;
+}
+
+#cart-preview button {
+    display: block;
+    width: 100%;
+}
+
+#cart-preview .img-container {
+    background-color: #0000000a;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#cart-preview img {
+    width: 150px;
+    height: 150px;
+}
+
+.cart-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    height: 100px;
+    width: 70%;
+    border-top: 1px solid #00000030;
+
+}
+
+.backdrop {
+    background-color: #00000050;
+    height: 100%;
+
+
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    transition: 0.8s ease;
+}
+
+.empty-text {
+    color: #00000060;
+    position: absolute;
+    top: 50%;
+    left: 35%;
+    text-align: center;
+}
+
+.cart-menu {
+    height: 100%;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    background-color: #fff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 0.5s;
+    border-left: 1px solid #00000030;
+}
+
+@media only screen and (max-width: 768px) {
+    #cart-preview {
+        top: 160px;
+    }
+}
+
+@media screen and (max-height: 460px) {
+
+
+    .cart-menu a {
+        font-size: 18px;
+    }
+}

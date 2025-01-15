@@ -1,0 +1,44 @@
+.about-content {
+    margin-top: 50px;
+    display: flex;
+
+}
+
+.about-content span {
+    color: var(--primary-color);
+}
+
+.about-content a {
+    color: var(--primary-color);
+    font-family: 'Fredoka';
+    font-weight: 500;
+}
+
+.about-content img {
+    width: 400px;
+    height: auto;
+    margin: 20px;
+}
+
+.about-content a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width:1024px) {
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-content img {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+
+
+    .about-content img {
+        width: 90%;
+        margin-left: 0;
+    }
+}
