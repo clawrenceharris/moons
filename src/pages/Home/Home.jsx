@@ -62,7 +62,7 @@ const Home = () => {
               {products.map((item, index) => {
                 if (item.isNew && index < 4) {
                   return (
-                    <div className="new-arrival-item">
+                    <div key={index} className="new-arrival-item">
                       <img alt={item.name} src={item.srcset[0]} />
                       <button
                         onClick={() => navigate("/product", { state: item })}

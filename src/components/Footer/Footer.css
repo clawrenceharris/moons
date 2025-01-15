@@ -1,103 +1,99 @@
 footer {
-    background-color: var(--second-bg-color);
-    color: white;
-    padding: 10px 20px;
-    z-index: 998;
-    width: 100%;
-    position: relative;
+  background-color: var(--second-bg-color);
+  color: white;
+  padding: 10px 20px;
+  z-index: 998;
+  width: 100%;
+  position: relative;
 }
 
 footer p {
-    font-size: 70%;
+  font-size: 70%;
 }
 
 footer dd {
-    text-indent: 30px;
-    margin-top: 20px;
+  text-indent: 30px;
+  margin-top: 20px;
 }
 
 .internal-links a,
 .internal-links button {
-    padding: 20px 30px;
-    background-color: #ffffff20;
-    height: 100px;
-    color: white;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  padding: 20px 30px;
+  background-color: #ffffff20;
+  height: 100px;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .copyright {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  align-items: center;
 }
 
 .copyright p {
-    color: gray;
+  color: gray;
 }
 
 .internal-links {
-    display: grid;
-    align-items: center;
-    margin: auto;
-    width: 95%;
-    column-gap: 20px;
-    row-gap: 10px;
-    margin-bottom: 40px;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-content: space-evenly;
+  display: grid;
+  align-items: center;
+  margin: auto;
+  width: 95%;
+  column-gap: 20px;
+  row-gap: 10px;
+  margin-bottom: 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: space-evenly;
 }
 
 footer dl {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-
+  display: flex;
+  gap: 5em;
+  flex-wrap: wrap;
 }
 
 footer a {
-    display: block;
-    margin-top: 10px;
-    color: white;
-
+  display: block;
+  margin-top: 10px;
+  color: white;
 }
 
 footer dl a {
-    font-size: 70%;
+  font-size: 70%;
 }
 
 footer dd a:hover {
-    color: var(--primary-color);
-    text-decoration: underline;
+  color: var(--primary-color);
+  text-decoration: underline;
 }
 
 .internal-links a:hover,
 .internal-links button:hover {
-    background-color: #ffffff50;
-
+  background-color: #ffffff50;
 }
 
 footer dt {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    margin-top: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 footer dt div {
-    width: 8px;
-    height: 25px;
-    background-color: var(--primary-color);
-    margin-right: 10px;
+  width: 8px;
+  height: 25px;
+  background-color: var(--primary-color);
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 768px) {
-    .internal-links {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+  .internal-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }

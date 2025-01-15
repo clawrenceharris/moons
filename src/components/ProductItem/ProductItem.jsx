@@ -98,11 +98,13 @@ function Product({ product }) {
             <div className="colors">
               {product.colors.map((item, index) => (
                 <div
-                  className={selectedColor === item && "active-color-container"}
+                  key={index}
+                  className={
+                    selectedColor === item ? "active-color-container" : ""
+                  }
                 >
                   <button
                     onClick={() => setSelectedColor(item)}
-                    key={index}
                     className={
                       selectedColor === item
                         ? "color-box active-color"

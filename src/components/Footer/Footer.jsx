@@ -24,47 +24,18 @@ function Footer() {
             <h3>About Moons</h3>
           </dt>
 
-          <dd>
-            <button>About Us</button>
-            <button>Career Opportunities</button>
-            <button>Privacy Policy</button>
-          </dd>
+          <dd>About Us</dd>
+          <dd>Career Opportunities</dd>
+          <dd>Privacy Policy</dd>
         </div>
         <div>
           <dt className="title">
             <div />
             <h3>Customer Support</h3>
           </dt>
-          <dd>
-            <button>Ordering Help</button>
-            <button>Make a Suggestion</button>
-            <button>FAQ's</button>
-          </dd>
-        </div>
-        <div>
-          <dt className="title">
-            <div />
-            <h3>Other Links</h3>
-          </dt>
-
-          <dd>
-            <a href="https://aacc.edu" rel="noreferrer" target="_blank">
-              AACC
-            </a>
-            <a href="https://instagram.com" rel="noreferrer" target="_blank">
-              Instagram
-            </a>
-            <a href="https://youtube.com" rel="noreferrer" target="_blank">
-              YouTube
-            </a>
-            <a href="https://facebook.com" rel="noreferrer" target="_blank">
-              Facebook
-            </a>
-
-            <a href="https://x.com" rel="noreferrer" target="_blank">
-              X
-            </a>
-          </dd>
+          <dd>Ordering Help</dd>
+          <dd>Make a Suggestion</dd>
+          <dd>FAQ's</dd>
         </div>
       </dl>
 

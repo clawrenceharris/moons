@@ -5,6 +5,8 @@ import {
   Routes,
   Route,
   Navigate,
+  useNavigate,
+  useLocation,
 } from "react-router-dom";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
@@ -13,8 +15,14 @@ import NewArrivals from "./pages/NewArrivals";
 import { CartProvider, useCart } from "./context/CartContext";
 import Checkout from "./pages/Checkout";
 import { Layout } from "./components";
+import { useEffect } from "react";
 function App() {
   const { checkout } = useCart();
+
+  useEffect(() => {
+    console.log("first");
+    document.body.scrollTo({ top: 0 });
+  }, [window.location]);
   if (checkout) {
     return <Navigate to={"/checkout"} />;
   }

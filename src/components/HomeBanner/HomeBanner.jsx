@@ -8,7 +8,12 @@ function Banner() {
   return (
     <div className="banner">
       {featured.srcset.map((item, index) => (
-        <img id={"banner-image" + (index + 1)} src={item} alt={featured.name} />
+        <img
+          key={index}
+          id={"banner-image" + (index + 1)}
+          src={item}
+          alt={featured.name}
+        />
       ))}
 
       <div className="overlay">

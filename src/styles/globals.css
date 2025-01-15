@@ -84,7 +84,6 @@ dd {
   font-size: 16px;
   line-height: 1.5em;
 }
-
 h1 {
   font-size: 190%;
   line-height: 2em;
@@ -247,7 +246,10 @@ label {
   padding-right: 1em;
   margin: 20px 0 5px 0;
 }
-
+a,
+span {
+  color: var(--accent-color);
+}
 .text-input {
   display: block;
   border-radius: 3px;
