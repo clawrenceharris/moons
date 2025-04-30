@@ -6,6 +6,7 @@ import menuImg from "../../assets/images/menu.png";
 import { Link } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import "./Header.css";
+import Navigation from "../Navigation";
 function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const { openCart, cartQuantity } = useCart();
@@ -23,7 +24,10 @@ function Header() {
   };
 
   return (
+    <>
+   
     <header>
+      <div className="header-container">
       <div className="header-left">
         <Link to={"/"}>
           {" "}
@@ -33,11 +37,12 @@ function Header() {
           <button id="sign-up">Sign Up</button>
           <button id="log-in">Log In</button>
         </div>
+
       </div>
 
-      <input id="desktop-searchbar" type="text" placeholder="Search" />
 
       <div className="header-right">
+        
         {isNavOpen ? (
           <h1 onClick={closeNav} style={{ cursor: "pointer", color: "white" }}>
             &times;
@@ -47,8 +52,9 @@ function Header() {
             <img className="menu" src={menuImg} alt="menu" />
           </button>
         )}
-        <input id="mobile-searchbar" type="text" placeholder="Search" />
+        <input id="searchbar" type="text" placeholder="Search" />
 
+        
         <Link>
           <img className="heart" src={heart} alt="heart" />
         </Link>
@@ -61,9 +67,14 @@ function Header() {
               {cartQuantity}
             </button>
           )}
+          </div>
+        
         </div>
-      </div>
+        </div>
     </header>
+      <Navigation />
+      </>
+
   );
 }
 

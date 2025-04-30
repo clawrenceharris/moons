@@ -278,21 +278,14 @@ button {
   cursor: pointer;
   font-size: 100%;
 }
-
 @media only screen and (min-width: 768px) {
-  main {
-    margin-left: 0;
-  }
-
+ 
   .button-filled,
   .button-outlined {
     font-size: 14px;
     padding: 8px 10px;
   }
 
-  html {
-    scroll-padding-top: 150px;
-  }
 
   section {
     padding: 1em;

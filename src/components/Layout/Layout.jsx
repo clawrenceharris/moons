@@ -7,16 +7,18 @@ import { Outlet } from "react-router-dom";
 
 const Layout = ({ children }) => {
   return (
-    <main>
-      <div>
-        <Header />
-        <Navigation />
-        <div style={{ marginLeft: "20%" }}>
+    <div className="layout">
+      <Header />
+        
+
+        <main>
+
           <Outlet />
-        </div>
+
+        </main>
         <Footer />
-      </div>
-    </main>
+
+    </div>
   );
 };
 

@@ -1,28 +1,34 @@
 nav ul li a {
     display: block;
     color: white;
-    padding: 5px 20px;
+    padding: 8px 20px;
     z-index: 2;
     font-weight: bold;
+    
 
 }
+nav ul{
 
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    max-width: 700px;
+}
 nav {
-    width: 20%;
-    padding: 30px 10px 10px 0;
+    top:0;
+    height:68px;
     background-color: black;
-    height: 100%;
-    position: fixed;
+    position: sticky;
+    width: 100%;
     z-index: 99;
-    overflow-x: hidden;
-    overflow-y: auto;
+    align-items: center;
+    display: flex;
     transition: 0.2s ease-in-out;
 }
 
 
 nav ul li {
     position: relative;
-    margin-bottom: 20px;
 }
 
 nav ul li a::before {
@@ -32,18 +38,19 @@ nav ul li a::before {
     z-index: -1;
     top: 0;
     margin: 0 10px 0 0;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-radius: 100px;
     background-color: var(--primary-color);
-    transform: scaleX(0);
+    transform: translateY(20px);
+    opacity: 0;
     width: 99%;
     height: 100%;
-    transition: .5s ease-in-out;
+    transition: .2s ease-in-out;
     transform-origin: bottom left;
 }
 
 nav ul li a:hover::before {
-    transform: scaleX(1);
+    transform: translateY(0);
+    opacity: 1;
     transform-origin: bottom left;
 }
 
@@ -53,12 +60,6 @@ nav .active-link {
     border-bottom-right-radius: 100px;
 }
 
-@media only screen and (max-width: 768px) {
-    nav {
-
-        width: 0px;
-        padding: 0;
-        padding-top: 30px;
-
-    }
+@media only screen and (min-width: 768px) {
+    
 }

@@ -5,7 +5,6 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 30px 20px 8px;
-    position: sticky;
     top: 0;
     overflow: hidden;
     z-index: 999;
@@ -21,24 +20,37 @@ header {
 header .cart {
     margin-left: 15px;
 }
+.header-container {
+    display: block;
 
-#mobile-searchbar {
-    display: none;
+    
+    width: 100%;
+}
+#searchbar {
+    background-color: #FFF;
+    border-radius: 25px;
+    flex:1;
 }
 
-.menu {
+header .menu {
     width: 30px;
     height: 30px;
     margin: 0;
-    display: none;
+    display: block;
 }
+
 
 .header-left,
 .header-right {
     display: flex;
     align-items: center;
 }
+.header-right{
+    flex:1;
+    margin-top: 20px;
 
+    
+}
 header input {
     flex: 1;
     border-radius: 25px;
@@ -92,13 +104,13 @@ header img {
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 720px) {
     header input {
         margin: 0 10px;
     }
 
-    .menu {
-        display: inline;
+    header .menu {
+        display: none;
     }
 
     header {
@@ -106,29 +118,20 @@ header img {
         padding-top: 10px;
     }
 
-    #desktop-searchbar {
-        display: none;
-    }
+    .header-container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
+    }
     .header-left {
         justify-content: space-between;
-        border-bottom: 1px solid #ffffff30;
     }
 
     .header-right {
-        padding: 15px 0 0;
-        padding-left: 8px;
+        margin:0 ;
+
     }
 
-    #mobile-searchbar {
-        display: inline-block;
-    }
-}
-
-@media screen and (max-height: 460px) {
-
-
-    .cart-menu a {
-        font-size: 18px;
-    }
+   
 }
