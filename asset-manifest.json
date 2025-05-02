@@ -1,8 +1,14 @@
 {
   "files": {
-    "main.css": "/moons/static/css/main.a5dc9eda.css",
-    "main.js": "/moons/static/js/main.f9da90db.js",
-    "static/media/moons-shoe-rack.webp": "/moons/static/media/moons-shoe-rack.87d489b11d99bfd7cb3e.webp",
+    "main.css": "/moons/static/css/main.b87f3a6b.css",
+    "main.js": "/moons/static/js/main.031591cf.js",
+    "static/media/seasonal3.jpeg": "/moons/static/media/seasonal3.64733f7885f4098fe497.jpeg",
+    "static/media/seasonal2.jpeg": "/moons/static/media/seasonal2.0d7647a44ad0cb1d0ccc.jpeg",
+    "static/media/featured1.jpeg": "/moons/static/media/featured1.6c0a105a35b8e9c826b5.jpeg",
+    "static/media/featured2.jpeg": "/moons/static/media/featured2.6a9995a03cd898be9006.jpeg",
+    "static/media/about.png": "/moons/static/media/about.66cb67f2dcb2d13aa82a.png",
+    "static/media/seasonal1.png": "/moons/static/media/seasonal1.7fac80a1360153cecca6.png",
+    "static/media/seasonal4.png": "/moons/static/media/seasonal4.e88ae96415011be38279.png",
     "static/media/shoe3.webp": "/moons/static/media/shoe3.c2dd98563e2278d9d1c1.webp",
     "static/media/shoe5.webp": "/moons/static/media/shoe5.21ef174b183afbefe00d.webp",
     "static/media/shoe2.webp": "/moons/static/media/shoe2.a6ff7ac818d6782805c2.webp",
@@ -23,11 +29,11 @@
     "static/media/fugazone-regular-webfont.woff2": "/moons/static/media/fugazone-regular-webfont.840b6fd296d536cb6cce.woff2",
     "static/media/new-arrivals-banner.jpg": "/moons/static/media/new-arrivals-banner.b6329dbdeb05fd963538.jpg",
     "index.html": "/moons/index.html",
-    "main.a5dc9eda.css.map": "/moons/static/css/main.a5dc9eda.css.map",
-    "main.f9da90db.js.map": "/moons/static/js/main.f9da90db.js.map"
+    "main.b87f3a6b.css.map": "/moons/static/css/main.b87f3a6b.css.map",
+    "main.031591cf.js.map": "/moons/static/js/main.031591cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5dc9eda.css",
-    "static/js/main.f9da90db.js"
+    "static/css/main.b87f3a6b.css",
+    "static/js/main.031591cf.js"
   ]
 }
