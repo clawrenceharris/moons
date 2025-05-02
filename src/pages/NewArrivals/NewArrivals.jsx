@@ -12,7 +12,7 @@ function NewArrivals() {
     return <Navigate to={"/checkout"} />;
   }
   return (
-    <div>
+    <div className="new-arrivals-container">
       <div className="new-arrivals-banner">
         <div className="banner">
           <img
@@ -48,7 +48,15 @@ function NewArrivals() {
           ?.map((item, index) => (
             <ProductGridItem key={index} product={item} />
           ))}
+        <div>
+          <button className="shop-all-container">
+            <p className="button-primary">SHOP ALL</p>
+          </button>
+        </div>
+       
       </section>
+
+     
     </div>
   );
 }

@@ -41,7 +41,7 @@ function ShoppingCart({ isCartOpen, onCheckoutPress }) {
             style={{ display: "flex", alignItems: "center" }}
             onClick={onCheckoutPress}
             className={
-              cartItems.length > 0 ? "button-filled" : "button-disabled"
+              cartItems.length > 0 ? "button-primary" : "button-disabled"
             }
           >
             Checkout

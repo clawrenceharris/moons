@@ -7,6 +7,7 @@ import {
   Deal,
   Contact,
   HomeBanner,
+  ProductGridItem,
 } from "../../components";
 
 import deals from "../../data/deals";
@@ -32,18 +33,13 @@ const Home = () => {
       <div>
         <HomeBanner srcset={[bannerImage3, bannerImage1, bannerImage2]} />
 
-        <section id="new-deals">
-          <h2>New Deals </h2>
-          <div className="deals">
-            {deals.map((item, index) => (
-              <Deal
-                key={index}
-                color={item.color}
-                titleA={item.titleA}
-                titleB={item.titleB}
-              />
-            ))}
+        <section id="featured">
+          <h2>Featured</h2>
+          <div className="content-row">
+          <img src={require("../../assets/images/featured1.jpeg")} alt="" />
+          <img src={require("../../assets/images/featured2.jpeg")} alt="" />
           </div>
+         
         </section>
 
         <section id="new-arrivals">
@@ -86,7 +82,7 @@ const Home = () => {
         <section id="top-kicks">
           <h2>Top Kicks</h2>
 
-          <div className="products-list">
+          <div className="content-row">
             {products
               .filter((item) => {
                 const totalStars = item.reviews.reduce(
@@ -101,6 +97,43 @@ const Home = () => {
               ))}
           </div>
         </section>
+       
+      <section id="seasonal-picks">
+        <h2>Seasonal Picks</h2>
+        <div className="seasonal-grid">
+            <p>Step into the new season with our latest picks
+                
+          </p>
+          <button className="button-primary" href="">Shop Now</button>
+
+ 
+            <img
+            className="image-left"
+            src={require("../../assets/images/seasonal2.jpeg")}
+
+            alt="Seasonal Left"
+          />
+          <img
+            className="image-middle-top"
+            alt="Seasonal Middle Top"
+            src={require("../../assets/images/seasonal1.png")}
+
+            />
+            <img
+                    className="image-middle-bottom"
+                    src={require("../../assets/images/seasonal4.png")}
+
+              alt="Seasonal Middle Bottom"
+            />
+            <img
+                    className="image-right"
+                    src={require("../../assets/images/seasonal3.jpeg")}
+
+              alt="Seasonal Right"
+            />
+  </div>
+
+      </section>
 
         <section id="mailing-list">
           <h2>Never miss a drop.</h2>
@@ -113,9 +146,7 @@ const Home = () => {
           <About />
         </section>
 
-        <section>
-          <Contact />
-        </section>
+        
       </div>
     </div>
   );

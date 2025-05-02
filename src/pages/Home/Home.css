@@ -5,7 +5,10 @@ ul {
 
 }
 
-
+#featured img{
+    width: 50vw;
+    height: 50vh;
+}
 
 #categories {
     display: flex;
@@ -16,7 +19,6 @@ ul {
     display: flex;
     overflow-x: auto;
 }
-
 
 
 
@@ -58,7 +60,6 @@ ul {
 }
 
 .shop-all-container p {
-    color: white;
     font-weight: bold;
     font-size: 26px;
     position: absolute;
@@ -67,6 +68,73 @@ ul {
 
 }
 
+#seasonal-picks{
+    width: 100vw;
+    height: 96vh;
+    overflow: hidden;
+}
+.banner {
+    height: 50vh;
+    background-color: var(--accent-color);
+}
+.seasonal-grid button{
+    z-index: 10;
+
+    background-size: cover;
+    transition: .4s ease;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.seasonal-grid p {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.seasonal-grid::after {
+    content: "";
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    left:0;
+    opacity: 0.4;
+    height: 100%;
+    background-color: #000000fc;
+
+}
+/* 
+.new-arrivals-container .shop-all-container {
+    display: flex;
+    overflow: hidden;
+    
+    position: relative;
+    height: 100%;
+    background: none;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    width: 100%;
+    align-self: center;
+} */
+
+.seasonal-grid {
+    display: grid;
+    grid-template-areas:
+      "left middle-top right"
+      "left middle-bottom right";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px; /* Adjust spacing between images */
+    height: 100%; /* Ensure the grid spans the full height */
+}
 .shop-all-container p:hover+.shop-all-btn {
     transform: scale(2);
 }
@@ -75,6 +143,8 @@ ul {
     display: flex;
     overflow: hidden;
     min-width: 150px;
+    color: white;
+
     min-height: 150px;
     align-items: center;
     justify-content: center;
@@ -119,7 +189,6 @@ ul {
     margin-top: 30px;
 
 }
-
 
 .new-arrivals-scroll {
     display: flex;

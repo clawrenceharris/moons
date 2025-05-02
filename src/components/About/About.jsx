@@ -1,14 +1,15 @@
 import React from "react";
-import moons_shoes from "../../assets/images/moons-shoe-rack.webp";
 import "./About.css";
+import Contact from "../Contact";
 function About() {
   return (
-    <div className="about-content">
+    <div>
+       <div className="about-content">
       <div>
+
         <h2>
-          About <span>Us</span>
+          About Us
         </h2>
-        <br />
         <p>
           At Moons we make and sell shoes designed to feel like you’re floating
           on the moon. They’re light on your feet and comfortable, yet built for
@@ -16,11 +17,17 @@ function About() {
           “sneakerhead” in all of us. With a strong history of sneaker
           prominence, we spark discovery and ignite the power of sneaker culture
           through our portfolio of innovative designs for men and woman.{" "}
-          <span> Learn More</span>.
-        </p>
+          <a> Learn More</a>.
+          </p>
+          <Contact />
+
       </div>
-      <img src={moons_shoes} alt="Shoe rack at Moons store" />
+      <img src={ require("../../assets/images/about.png")} />
+  
     </div>
+
+    </div>
+   
   );
 }
 

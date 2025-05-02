@@ -5,18 +5,23 @@ function Contact() {
   return (
     <div className="contact-content">
       <h2>
-        Contact <span>Us</span>
+        Contact Us
       </h2>
       <br />
       <span>
         <h4>Moons Inc. Headquaters</h4>
       </span>
+      <p>1028 2nd Street
       <br />
-      <p>1028 2nd Street Sacramento, CA 95814</p>
-      <br />
-      <a href="tel:555-555-8888">555-555-8888</a>
-      <br />
-      <a href="mailto:customerservice@moons.com">customerservice@moons.com</a>
+
+        Sacramento, CA 95814
+        <br />
+
+        <a href="tel:555-555-8888">555-555-8888</a>
+
+        <a href="mailto:customerservice@moons.com">customerservice@moons.com</a>
+
+      </p>
     </div>
   );
 }

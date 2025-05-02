@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./ProductListItem";
+import "./ProductListItem.css";
 
 function ProductListItem({ product }) {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ function ProductListItem({ product }) {
       <h5>{product.name}</h5>
 
       <button
-        className="button-filled"
+        className="button-primary"
         onClick={() => navigate("/product", { state: product })}
       >
         SHOP

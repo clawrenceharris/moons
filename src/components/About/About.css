@@ -1,21 +1,19 @@
 .about-content {
     margin-top: 50px;
     display: flex;
+    padding: 50px;
 
 }
 
-.about-content span {
-    color: var(--primary-color);
-}
 
-.about-content a {
+ a {
     color: var(--primary-color);
     font-family: 'Fredoka';
     font-weight: 500;
 }
 
 .about-content img {
-    width: 400px;
+    width: 50vw;
     height: auto;
     margin: 20px;
 }

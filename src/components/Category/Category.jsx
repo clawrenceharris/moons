@@ -13,7 +13,7 @@ function Category({ type }) {
         <img src={femaleImage} alt="female sitting down" />
       )}
       <div className="overlay">
-        {type === "men" ? <h1>Men</h1> : <h1>Women</h1>}
+        {type === "men" ? <h2>Men</h2> : <h2>Women</h2>}
         <div className="shop-now">
           <span href="#">Shop Now</span>
           <img src={arrow} alt="right arrow" />

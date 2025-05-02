@@ -253,7 +253,7 @@ function Checkout() {
               }
             }}
             style={{ marginRight: "10px" }}
-            className="button-filled"
+            className="button-primary"
             type="submit"
           >
             Save & Continue
@@ -359,7 +359,7 @@ function Checkout() {
                         }
                       }}
                       style={{ marginRight: "10px" }}
-                      className="button-filled"
+                      className="button-primary"
                       type="submit"
                     >
                       {" "}
@@ -476,7 +476,7 @@ function Checkout() {
                         }
                       }}
                       style={{ marginRight: "10px" }}
-                      className="button-filled"
+                      className="button-primary"
                       type="submit"
                     >
                       {" "}
@@ -617,7 +617,7 @@ function Checkout() {
                           }
                           setShowShippingOptions(false);
                         }}
-                        className="button-filled"
+                        className="button-primary"
                       >
                         Save
                       </button>
@@ -665,7 +665,7 @@ function Checkout() {
                           }
                           code.value = "";
                         }}
-                        className="button-filled"
+                        className="button-primary"
                       >
                         Apply
                       </button>
@@ -688,7 +688,7 @@ function Checkout() {
               style={{ width: "100%" }}
               className={
                 completedSections.length >= 3
-                  ? "button-filled"
+                  ? "button-primary"
                   : "button-disabled"
               }
             >
