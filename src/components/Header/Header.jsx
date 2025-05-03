@@ -4,7 +4,7 @@ import heart from "../../assets/images/heart.png";
 import cartImg from "../../assets/images/cart.png";
 import menuImg from "../../assets/images/menu.png";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/";
 import "./Header.css";
 import Navigation from "../Navigation";
 function Header() {
@@ -14,13 +14,14 @@ function Header() {
   const openNav = () => {
     setIsNavOpen(true);
     const nav = document.getElementById("nav");
-    nav.style.width = "100%";
+   
+    nav.classList.add("open");
   };
 
   const closeNav = () => {
     setIsNavOpen(false);
     const nav = document.getElementById("nav");
-    nav.style.width = "0";
+    nav.classList.remove("open");
   };
 
   return (
@@ -44,9 +45,9 @@ function Header() {
       <div className="header-right">
         
         {isNavOpen ? (
-          <h1 onClick={closeNav} style={{ cursor: "pointer", color: "white" }}>
+          <h2 className="close-btn" onClick={closeNav}>
             &times;
-          </h1>
+          </h2>
         ) : (
           <button onClick={openNav}>
             <img className="menu" src={menuImg} alt="menu" />

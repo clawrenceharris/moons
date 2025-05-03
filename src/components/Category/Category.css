@@ -21,6 +21,10 @@
 .category-box h2 {
     padding: 20px;
     font-weight: bold;
+    font-family: Dunbar;
+    font-weight: 100;
+    font-size: 6rem;
+    text-wrap: wrap;
 
 }
 

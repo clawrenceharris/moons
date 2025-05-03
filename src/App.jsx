@@ -12,23 +12,20 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import SizeGuide from "./pages/SizeGuide";
 import NewArrivals from "./pages/NewArrivals";
-import { CartProvider, useCart } from "./context/CartContext";
+import { CartProvider, useCart } from "./context/";
 import Checkout from "./pages/Checkout";
 import { Layout } from "./components";
 import { useEffect } from "react";
 function App() {
   const { checkout } = useCart();
-
   useEffect(() => {
-    console.log("first");
-    document.body.scrollTo({ top: 0 });
-  }, [window.location]);
+    window.scrollTo(0, 0);
+  }, [window.location.pathname]); 
+
   if (checkout) {
     return <Navigate to={"/checkout"} />;
   }
   return (
-    <CartProvider>
-      <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
             <Route index path="/" element={<Home />} />
@@ -39,8 +36,6 @@ function App() {
             <Route path="/checkout" element={<Checkout />} />
           </Route>
         </Routes>
-      </BrowserRouter>
-    </CartProvider>
   );
 }
 

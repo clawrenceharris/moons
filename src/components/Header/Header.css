@@ -10,11 +10,14 @@ header {
     z-index: 999;
     width: 100%;
     border-bottom: 1px solid #ffffff30;
+    color: white;
 }
-
-.close-btn {
-    width: 20px;
-    height: 20px
+ 
+header .close-btn {
+    margin: 0;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 3rem;
 }
 
 header .cart {
@@ -65,7 +68,9 @@ header img {
     height: 25px;
 
 }
-
+.header-left {
+    justify-content: space-between;
+}
 .cart-badge {
     background-color: var(--primary-color);
     padding: 5px;
@@ -124,9 +129,7 @@ header img {
         justify-content: space-between;
 
     }
-    .header-left {
-        justify-content: space-between;
-    }
+   
 
     .header-right {
         margin:0 ;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/";
 import { formatCurrency } from "../../utils/formatCurrency";
 import "./ProductItem.css";
 
@@ -73,7 +73,7 @@ function Product({ product }) {
       </div>
 
       <div className="product-bottom">
-        <h2>{product.name}</h2>
+        <h1>{product.name}</h1>
         <p className="type">{product.type}</p>
 
         {product.salePrice > 0 ? (

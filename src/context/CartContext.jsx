@@ -4,15 +4,15 @@ import { ShoppingCart } from "../components";
 
 const CartContext = createContext({});
 
-export function useCart() {
+const useCart = ()  =>{
   return useContext(CartContext);
 }
 
-export function CartProvider({ children }) {
+const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useLocalStorage("cart", []);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [checkout, setCheckout] = useState(false);
-
+ 
   const openCart = () => {
     setIsCartOpen(true);
   };
@@ -31,7 +31,7 @@ export function CartProvider({ children }) {
   function getItemQuantity(item) {
     return cartItems.find((el) => isSameItem(el, item))?.quantity || 0;
   }
-  function increaseCartQuantity(item) {
+  function addItemToCart(item) {
     setCartItems((currItems) => {
       if (currItems.find((el) => isSameItem(el, item)) == null) {
         return [...cartItems, { ...item, quantity: 1 }];
@@ -88,7 +88,7 @@ export function CartProvider({ children }) {
     <CartContext.Provider
       style={{ width: "100%", height: "100%" }}
       value={{
-        increaseCartQuantity,
+         addItemToCart,
         decreaseCartQuantity,
         removeFromCart,
         getItemQuantity,
@@ -115,3 +115,5 @@ export function CartProvider({ children }) {
     </CartContext.Provider>
   );
 }
+
+export {CartProvider, useCart};

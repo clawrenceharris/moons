@@ -12,7 +12,7 @@ import {
 
 import deals from "../../data/deals";
 import { bannerImage1, bannerImage2, bannerImage3 } from "../../assets";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/";
 import { Navigate, useNavigate } from "react-router-dom";
 import { products } from "../../data/products";
 import "./Home.css";
