@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/moons/static/css/main.b87f3a6b.css",
-    "main.js": "/moons/static/js/main.031591cf.js",
+    "main.css": "/moons/static/css/main.6cacc995.css",
+    "main.js": "/moons/static/js/main.9dd7fc17.js",
     "static/media/seasonal3.jpeg": "/moons/static/media/seasonal3.64733f7885f4098fe497.jpeg",
     "static/media/seasonal2.jpeg": "/moons/static/media/seasonal2.0d7647a44ad0cb1d0ccc.jpeg",
     "static/media/featured1.jpeg": "/moons/static/media/featured1.6c0a105a35b8e9c826b5.jpeg",
@@ -29,11 +29,11 @@
     "static/media/fugazone-regular-webfont.woff2": "/moons/static/media/fugazone-regular-webfont.840b6fd296d536cb6cce.woff2",
     "static/media/new-arrivals-banner.jpg": "/moons/static/media/new-arrivals-banner.b6329dbdeb05fd963538.jpg",
     "index.html": "/moons/index.html",
-    "main.b87f3a6b.css.map": "/moons/static/css/main.b87f3a6b.css.map",
-    "main.031591cf.js.map": "/moons/static/js/main.031591cf.js.map"
+    "main.6cacc995.css.map": "/moons/static/css/main.6cacc995.css.map",
+    "main.9dd7fc17.js.map": "/moons/static/js/main.9dd7fc17.js.map"
   },
   "entrypoints": [
-    "static/css/main.b87f3a6b.css",
-    "static/js/main.031591cf.js"
+    "static/css/main.6cacc995.css",
+    "static/js/main.9dd7fc17.js"
   ]
 }
