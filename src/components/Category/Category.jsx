@@ -6,7 +6,7 @@ import "./Category.css";
 
 function Category({ type }) {
   return (
-    <div className="category-box">
+    <div className="category-box content-row">
       {type === "men" ? (
         <img src={maleImage} alt="male sitting down" />
       ) : (
