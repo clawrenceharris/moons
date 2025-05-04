@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.css": "/moons/static/css/main.6cacc995.css",
-    "main.js": "/moons/static/js/main.9dd7fc17.js",
-    "static/media/seasonal3.jpeg": "/moons/static/media/seasonal3.64733f7885f4098fe497.jpeg",
+    "main.css": "/moons/static/css/main.b0672ae6.css",
+    "main.js": "/moons/static/js/main.5bc26a47.js",
     "static/media/seasonal2.jpeg": "/moons/static/media/seasonal2.0d7647a44ad0cb1d0ccc.jpeg",
     "static/media/featured1.jpeg": "/moons/static/media/featured1.6c0a105a35b8e9c826b5.jpeg",
+    "static/media/seasonal3.jpeg": "/moons/static/media/seasonal3.fe172b5942fd77efbcfb.jpeg",
     "static/media/featured2.jpeg": "/moons/static/media/featured2.6a9995a03cd898be9006.jpeg",
+    "static/media/texture1.png": "/moons/static/media/texture1.df472af3bec8f14e0741.png",
     "static/media/about.png": "/moons/static/media/about.66cb67f2dcb2d13aa82a.png",
     "static/media/seasonal1.png": "/moons/static/media/seasonal1.7fac80a1360153cecca6.png",
     "static/media/seasonal4.png": "/moons/static/media/seasonal4.e88ae96415011be38279.png",
@@ -29,11 +30,11 @@
     "static/media/fugazone-regular-webfont.woff2": "/moons/static/media/fugazone-regular-webfont.840b6fd296d536cb6cce.woff2",
     "static/media/new-arrivals-banner.jpg": "/moons/static/media/new-arrivals-banner.b6329dbdeb05fd963538.jpg",
     "index.html": "/moons/index.html",
-    "main.6cacc995.css.map": "/moons/static/css/main.6cacc995.css.map",
-    "main.9dd7fc17.js.map": "/moons/static/js/main.9dd7fc17.js.map"
+    "main.b0672ae6.css.map": "/moons/static/css/main.b0672ae6.css.map",
+    "main.5bc26a47.js.map": "/moons/static/js/main.5bc26a47.js.map"
   },
   "entrypoints": [
-    "static/css/main.6cacc995.css",
-    "static/js/main.9dd7fc17.js"
+    "static/css/main.b0672ae6.css",
+    "static/js/main.5bc26a47.js"
   ]
 }
