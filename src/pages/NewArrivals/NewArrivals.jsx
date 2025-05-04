@@ -2,7 +2,7 @@ import React from "react";
 import bannerImage from "../../assets/images/new-arrivals-banner.jpg";
 import { ProductGridItem } from "../../components";
 import { products } from "../../data/products";
-import { useCart } from "../../context/";
+import { useCart } from "../../context/CartContext";
 import { Navigate } from "react-router-dom";
 import "./NewArrivals.css";
 

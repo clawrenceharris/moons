@@ -4,35 +4,6 @@
 }
 
   
-.image-left {
-    grid-area: left;
-    width: 100%;
-    min-height: 100%;
-    object-fit: cover; /* Ensures the image fills the grid area */
-}
-
-.image-middle-top {
-    grid-area: middle-top;
-    width: 100%;
-    height: auto;
-}
-
-.image-middle-bottom {
-    grid-area: middle-bottom;
-    width: 100%;
-    height: auto;
-}
-
-.image-right {
-    grid-area: right;
-    width: 100%;
-    min-height: 100%;
-    object-fit: cover; /* Ensures the image fills the grid area */
-}
-#seasonal-picks img{
-    height: 100%;
-    object-fit: cover;
-}
 @media only screen and (max-width: 1024px) {
     #new-arrivals-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));

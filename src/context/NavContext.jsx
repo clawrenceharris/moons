@@ -11,9 +11,13 @@ const NavProvider = ({ children }) => {
     const [activeLink, setActiveLink] = useState("home");
 
     function openNav() {
+        const nav = document.getElementById("nav");
+        nav.classList.add("open");
         setIsNavOpen(true);
     }
     function closeNav() {
+        const nav = document.getElementById("nav");
+        nav.classList.remove("open");
         setIsNavOpen(false);
     }
     

@@ -12,10 +12,11 @@ import {
 
 import deals from "../../data/deals";
 import { bannerImage1, bannerImage2, bannerImage3 } from "../../assets";
-import { useCart } from "../../context/";
+import { useCart } from "../../context/CartContext";
 import { Navigate, useNavigate } from "react-router-dom";
 import { products } from "../../data/products";
 import "./Home.css";
+import SeasonalPicks from "../../components/SeasonalPicks/SeasonalPicks";
 const Home = () => {
   const navigate = useNavigate();
   const { checkout } = useCart();
@@ -99,39 +100,8 @@ const Home = () => {
         </section>
        
       <section id="seasonal-picks">
-        <h2>Seasonal Picks</h2>
-        <div className="seasonal-grid">
-            <p>Step into the new season with our latest picks
-                
-          </p>
-          <button className="button-primary" href="">Shop Now</button>
-
- 
-            <img
-            className="image-left"
-            src={require("../../assets/images/seasonal2.jpeg")}
-
-            alt="Seasonal Left"
-          />
-          <img
-            className="image-middle-top"
-            alt="Seasonal Middle Top"
-            src={require("../../assets/images/seasonal1.png")}
-
-            />
-            <img
-                    className="image-middle-bottom"
-                    src={require("../../assets/images/seasonal4.png")}
-
-              alt="Seasonal Middle Bottom"
-            />
-            <img
-                    className="image-right"
-                    src={require("../../assets/images/seasonal3.jpeg")}
-
-              alt="Seasonal Right"
-            />
-  </div>
+       
+              <SeasonalPicks/>
 
       </section>
 

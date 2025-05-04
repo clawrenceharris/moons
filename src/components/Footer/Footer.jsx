@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
-import { useCart } from "../../context/";
+import { useCart } from "../../context/CartContext";
 import "./Footer.css";
 
 function Footer() {

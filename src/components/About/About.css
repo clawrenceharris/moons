@@ -6,15 +6,15 @@
 }
 
 
- a {
+a {
     color: var(--primary-color);
     font-family: 'Fredoka';
     font-weight: 500;
 }
 
 .about-content img {
-    width: 50vw;
-    height: auto;
+    max-width: 70%;
+    object-fit: contain;
     margin: 20px;
 }
 

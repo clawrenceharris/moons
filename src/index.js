@@ -7,14 +7,15 @@ import { BrowserRouter } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CartProvider>
-      <NavProvider>
-        <BrowserRouter>
-        
-            <App />
-          </BrowserRouter>
-      </NavProvider>
+    <NavProvider>
+      <CartProvider>
 
-    </CartProvider>
+       
+          <App />
+       
+         
+        </CartProvider>
+    </NavProvider>
+   
   </React.StrictMode>
 );
