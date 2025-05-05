@@ -16,29 +16,30 @@ function NewArrivals() {
       <div className="new-arrivals-banner">
         <div className="banner">
           <img
-            style={{ width: "100%", height: "auto" }}
+            
             id="banner-image"
             src={bannerImage}
             alt="moon walker shoes"
           />
           <div className="overlay">
-            <div style={{}} className="text-container">
+            <div className="banner-content">
+              <div>
+
+              
               <h1
-                style={{
-                  width: "200px",
-                  color: "white",
-                  borderBottom: "5px solid #E70007",
-                }}
+                
               >
                 New for You!
               </h1>
               <p style={{ marginTop: "20px" }}>
                 Check out these new arrivals we know you'll love.
-              </p>
-            </div>
-            <span>
+                </p>
+                </div>
+              <span>
               <a href="#new-arrivals">SHOP NOW</a>
             </span>
+            </div>
+           
           </div>
         </div>
       </div>
