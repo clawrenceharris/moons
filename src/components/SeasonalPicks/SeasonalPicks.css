@@ -114,10 +114,11 @@
           "left middle-bottom right";
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
-        gap: 10px;
         height: 100%;
     }
-
+    .seasonal-picks-container{
+        height: 90vh;
+    }
     .image-left{
         min-height:  100%;
     }

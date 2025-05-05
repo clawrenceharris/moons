@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navigation.css";
 import { useNav } from "../../context";
 
 const Navigation = () => {
-  const { activeLink, setActiveLink } = useNav();
+  const { activeLink, setActiveLink, openNav, closeNav } = useNav();
+  const isMobile = window.matchMedia("min-width: 768px");
+  useEffect(() => {
+    if (isMobile) {
+      openNav();
+    }
+    else {
+      closeNav();
+    }
+  }, [isMobile])
   return (
     <nav id="nav">
       <ul>
