@@ -48,7 +48,7 @@ const Navigation = () => {
         </li>
         <li>
           <Link
-            onClick={() => setActiveLink("home")}
+            onClick={() => setActiveLink("releases")}
             className={activeLink === "releases" ? "active-link" : ""}>
             Releases
           </Link>
