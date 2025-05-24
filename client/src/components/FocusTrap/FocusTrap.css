@@ -1,0 +1,6 @@
+.focus-container {
+  min-width: 100%;
+  flex: 1;
+  height: 100%;
+  position: fixed;
+}

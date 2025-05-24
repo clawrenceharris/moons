@@ -1,0 +1,37 @@
+.sidebar-container.closed {
+  /* opacity: 0; */
+}
+.sidebar-content {
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar-container.left.closed {
+  transform: translateX(-100%);
+}
+.sidebar-container.left {
+  left: 0;
+}
+.sidebar-container.right.closed {
+  transform: translateX(100%);
+}
+.sidebar-container.right {
+  right: 0;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  min-width: 300px;
+  max-width: 400px;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+  height: 100%;
+  box-shadow: 10px 0 20px 0 #00000030;
+}
+.sidebar-container.open {
+  opacity: 1;
+}

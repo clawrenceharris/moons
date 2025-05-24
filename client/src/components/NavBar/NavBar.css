@@ -1,0 +1,160 @@
+nav ul li a {
+  display: block;
+  z-index: 2;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  margin: 4px;
+  justify-content: center;
+}
+
+.nav-secondary .logo {
+  margin: 0;
+}
+
+ul li {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+nav ul {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+nav ul li:not(:last-child) {
+  border-bottom: 1px solid #ffffff30;
+}
+
+nav {
+  background-color: black;
+  left: 0;
+  z-index: 9;
+  width: 100%;
+  height: 100%;
+  color: white;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  bottom: 0;
+  top: 0;
+  display: flex;
+}
+
+.nav {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+nav li::before {
+  content: "";
+  left: 0;
+  z-index: -1;
+  top: 0;
+  position: absolute;
+  background-color: var(--primary-color);
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s ease-out, opacity 0.35s;
+  transform-origin: bottom center;
+}
+
+nav.secondary li::before {
+  transform: translateX(-50px);
+}
+
+nav.main li::before {
+  transform: translateY(-50px);
+}
+nav li:hover::before {
+  transform: translateX(0);
+  transform: translateY(0);
+
+  opacity: 1;
+}
+
+nav li:has(.active)::before {
+  opacity: 1;
+  transform: translateX(0);
+  transform: translateY(0);
+
+  background-color: var(--primary-color);
+}
+
+nav .icon {
+  filter: invert(1);
+}
+nav.secondary .nav-top {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a .active,
+nav ul li:hover a {
+  color: white;
+}
+nav ul li:has(a.active:hover)::before {
+  opacity: 0.7;
+}
+
+nav.secondary a {
+  color: black;
+  justify-content: start;
+}
+nav ul li {
+  border-color: #00000020;
+}
+nav.secondary {
+  background-color: white;
+  flex-direction: column;
+}
+
+nav.main {
+  display: none;
+}
+@media screen and (min-width: 720px) {
+  nav.main {
+    flex-direction: row;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    position: relative;
+  }
+
+  nav.main .nav-top {
+    display: none;
+  }
+  nav.main ul {
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff20;
+  }
+
+  nav.main ul li {
+    height: 100%;
+    border-right: 1px solid #ffffff20;
+    justify-content: center;
+  }
+
+  /* nav.main ul li a:hover::before {
+    transform: translateY(0);
+  }
+  nav.main ul li a:hover::before {
+    transform: translateY(0);
+  } */
+}

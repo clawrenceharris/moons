@@ -1,0 +1,16 @@
+.new-arrivals-container .banner {
+  height: 90vh;
+}
+.new-arrivals-container h1 {
+  color: white;
+  text-wrap: nowrap;
+  border-bottom: 5px solid var(--primary-color);
+}
+.banner-content {
+  justify-content: space-between;
+  width: 95%;
+  display: flex;
+  position: absolute;
+  bottom: 80px;
+  padding: 0 20px;
+}

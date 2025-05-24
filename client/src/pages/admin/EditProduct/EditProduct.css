@@ -1,0 +1,7 @@
+.product-container {
+  width: 100%;
+  flex: 1;
+}
+.product-container .submit {
+  margin: 1.5rem 0;
+}

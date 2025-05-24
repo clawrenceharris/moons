@@ -1,0 +1,6 @@
+{
+  "watch": ["routes", "controllers", "db", "index.ts"],
+  "ext": "ts",
+  "ignore": ["dist"],
+  "exec": "ts-node index.ts"
+}

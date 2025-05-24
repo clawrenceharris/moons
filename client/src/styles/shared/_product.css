@@ -1,0 +1,22 @@
+.price {
+  font-family: Dunbar;
+  margin-top: 10px;
+}
+
+.sale-price {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.sale-badge {
+  background-color: var(--primary-color);
+}
+
+.new-badge {
+  background-color: var(--accent-color);
+}
+
+.badge-container {
+  position: absolute;
+  align-self: flex-start;
+}

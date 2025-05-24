@@ -1,0 +1,85 @@
+footer {
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  z-index: 99;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  padding: 40px;
+}
+
+.internal-links a,
+.internal-links button {
+  background-color: #00000020;
+  height: 100px;
+  color: black;
+  width: 100%;
+  font-family: Dunbar, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-bottom {
+  border-top: 1px solid #00000030;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  align-items: center;
+  padding: 20px;
+}
+
+.internal-links {
+  display: grid;
+  align-items: center;
+  column-gap: 20px;
+  gap: 10px;
+  margin-bottom: 40px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  justify-content: space-evenly;
+}
+
+footer .link {
+  display: block;
+  margin-top: 10px;
+  font-weight: normal;
+  color: #00000050;
+  font-size: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 5em;
+  flex-wrap: wrap;
+}
+.internal-links a:hover,
+.internal-links button:hover {
+  background-color: #00000030;
+}
+
+footer .title {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+footer form p {
+  max-width: 260px;
+  margin-top: 20px;
+}
+footer .button-primary {
+  margin-top: 20px;
+}
+footer .title div {
+  width: 8px;
+  height: 25px;
+  background-color: var(--primary-color);
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 720px) {
+  .internal-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
