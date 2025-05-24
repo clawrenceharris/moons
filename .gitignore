@@ -36,7 +36,8 @@ coverage/
 .cache/
 tmp/
 temp/
-
+client/dist/
+server/dist/
 # =========================
 # TypeScript
 # =========================
