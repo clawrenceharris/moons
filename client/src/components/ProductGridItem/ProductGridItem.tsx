@@ -4,7 +4,6 @@ import "./ProductGridItem.css";
 import { Product } from "../../../../shared/types";
 import "../../styles/shared/_product.css";
 import { formatCategory, formatCurrency } from "../../utils";
-import { useProduct } from "../../hooks";
 import { useShop } from "../../context";
 
 function ProductGridItem({ product }: { product: Product }) {

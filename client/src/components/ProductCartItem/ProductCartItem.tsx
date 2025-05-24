@@ -6,7 +6,7 @@ import { useCartStore } from "../../stores";
 import { assets } from "../../assets";
 
 function ProductCartItem({ product }: { product: CartItem }) {
-  const cart = useCartStore((s) => s.cart);
+  useCartStore((s) => s.cart);
   const increment = useCartStore((s) => s.incrementItemQuantity);
   const decrement = useCartStore((s) => s.decrementItemQuantity);
 

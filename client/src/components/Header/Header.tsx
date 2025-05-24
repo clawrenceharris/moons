@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Header.css";
 import { assets } from "../../assets";
 import { useMediaQuery } from "@react-hook/media-query";
@@ -7,12 +7,10 @@ import SearchBar from "../SearchBar";
 import { CartButton, MenuButton } from "../buttons/";
 import NavBar from "../NavBar";
 import SideBar from "../SideBar";
-import ShoppingCart from "../ShoppingCart";
-import { useCartStore } from "../../stores";
+
 function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const navigate = useNavigate();
   const menuButtonElement = (): HTMLButtonElement | null => {
     const menuBtn = document.getElementById("menu-btn");
     return menuBtn as HTMLButtonElement;

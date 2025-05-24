@@ -4,7 +4,7 @@ import { Product as ProductType } from "../../../../shared/types";
 import { ProductGridItem, SearchBar } from "../../components";
 import { formatCategory } from "../../utils";
 import "./Shop.css";
-import NotFound from "../NotFound/NotFound";
+
 import { useShop } from "../../context/ShopContext";
 const Shop: React.FC = () => {
   const { category = "All", subcategory } = useParams<{
@@ -14,7 +14,6 @@ const Shop: React.FC = () => {
   const { products, categories, subcategories } = useShop();
   const [filteredProducts, setFilteredProducts] = useState<ProductType[]>([]);
   const [title, setTitle] = useState("");
-  const [notFound, setNotFound] = useState(false);
   useEffect(() => {
     // Build query parameters
     const params: Record<string, string> = { category };
@@ -26,11 +25,9 @@ const Shop: React.FC = () => {
           )}`
         : `${formatCategory(category).toUpperCase()}`
     );
-    console.log(products);
     setFilteredProducts(
       products
         .filter((item) => {
-          console.log({ category, item: item.category });
           return item.category.toLowerCase() === category.toLowerCase();
         })
         .filter((item) =>
@@ -40,10 +37,6 @@ const Shop: React.FC = () => {
         )
     );
   }, [categories, category, products, subcategories, subcategory]);
-
-  if (notFound) {
-    return <NotFound />;
-  }
 
   return (
     <div className="shop-container">
