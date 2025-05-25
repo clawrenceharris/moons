@@ -1,17 +1,8 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "target": "es2020",
-    "jsx": "react-jsx",
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "rootDir": "../",
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": false,
-    "moduleResolution": "node",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "skipDefaultLibCheck": true
+    "rootDir": "src",
+    "outDir": "dist"
   },
   "include": ["src", "../types"]
 }

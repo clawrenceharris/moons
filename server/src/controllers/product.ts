@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../db";
-import { Product } from "../../../types";
-export async function getFullProductById(id: number): Promise<Product | null> {
+export async function getFullProductById(id: number) {
   const [products]: any = await db.promise().query(
     `SELECT * FROM products WHERE published = TRUE AND is_archived = FALSE AND 
       id = ? LIMIT 1`,
@@ -94,6 +93,24 @@ export const getProduct = async (req: Request, res: Response) => {
 
 export const getProductsBySearch = async (req: Request, res: Response) => {
   const { query } = req.query;
+  if (!query) {
+    try {
+      const [p]: any = await db
+        .promise()
+        .query(
+          `SELECT id FROM products WHERE published = TRUE AND is_archived = FALSE`
+        );
+      const products = await Promise.all(
+        p.map((p: any) => getFullProductById(p.id))
+      );
+      // Filter out any nulls (in case a product was deleted between queries)
+      res.json(products);
+      return;
+    } catch (err: any) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+  }
   const q = query.toString().trim().replace(/'/g, "");
   const words = q.split(/\s+/).filter(Boolean);
 
