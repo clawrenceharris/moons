@@ -3,7 +3,7 @@
     "target": "es2020",
     "jsx": "react-jsx",
     "module": "CommonJS",
-    "outDir": "dist",
+    "outDir": "./dist",
     "rootDir": "../",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
