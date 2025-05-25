@@ -13,7 +13,7 @@ import cookieParser from "cookie-parser";
 import { adminProductRoutes } from "./routes/admin";
 
 const app = express();
-
+const PORT = 8800;
 // middlewares
 app.use(express.json());
 
@@ -38,6 +38,6 @@ app.use("/api/tags", tagRoutes);
 
 app.use("/api/favorites", favoriteRoutes);
 app.use("/api/auth", authRoutes);
-app.listen(8800, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log("API working!");
 });
