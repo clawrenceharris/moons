@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Product } from "../../../types";
+import { Product } from "../types";
 import { fetchProduct } from "../api/admin/products";
 
 const useProduct = (id?: number) => {

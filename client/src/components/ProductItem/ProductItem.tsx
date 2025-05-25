@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { formatCategory, formatCurrency } from "../../utils";
 import "./ProductItem.css";
-import { Product } from "../../../../types";
+import { Product } from "../../types";
 import { useCartStore } from "../../stores";
 interface ProductItemProps {
   product: Product;

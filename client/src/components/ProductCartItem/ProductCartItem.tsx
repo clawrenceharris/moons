@@ -1,7 +1,7 @@
 import React from "react";
 import { formatCurrency } from "../../utils";
 import "./ProductCartItem.css";
-import { CartItem } from "../../../../types";
+import { CartItem } from "../../types";
 import { useCartStore } from "../../stores";
 import { assets } from "../../assets";
 
