@@ -147,7 +147,7 @@ const subcategoyExists = (subcategory: string) => {
   return new Promise((resolve, reject) => {
     const query = "SELECT id FROM subcategories WHERE name = ?";
     db.query(query, [subcategory], (err, results: any[]) => {
-      if (err) return reject(err);
+      if (err) return reject({ error: err.message });
       if (results.length === 0) {
         return resolve(false);
       }
