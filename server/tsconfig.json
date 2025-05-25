@@ -11,8 +11,7 @@
     "strict": false,
     "moduleResolution": "node",
     "noEmit": false,
-    "skipDefaultLibCheck": true,
-    "types": ["node"]
+    "skipDefaultLibCheck": true
   },
 
   "include": ["src"]
