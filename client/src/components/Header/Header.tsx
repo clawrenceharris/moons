@@ -17,11 +17,7 @@ function Header() {
   };
   const cartButtonRef = useRef<HTMLButtonElement>(null);
   const isDesktop = useMediaQuery("screen and (min-width: 720px)");
-  // useEffect(() => {
-  //   if (isDesktop) {
-  //     closeNav();
-  //   }
-  // }, [isDesktop, closeNav]);
+
   const onOpenNav = () => {
     setIsNavOpen(true);
   };
@@ -98,7 +94,7 @@ function Header() {
         onClose={onCloseNav}
         isOpen={isNavOpen}
       >
-        <NavBar className="secondary" />
+        <NavBar aria-hidden={!isNavOpen} className="secondary" />
       </SideBar>
 
       {!showMenu && !isNavOpen && <NavBar className="main" />}

@@ -6,9 +6,7 @@ const SeasonalPicks = () => {
       <div className="seasonal-grid">
         <div className="seasonal-grid-content">
           <p>Step into the new season with our latest picks</p>
-          <button className="button-primary" href="">
-            Shop Now
-          </button>
+          <button className="button-primary">Shop Now</button>
         </div>
 
         <img

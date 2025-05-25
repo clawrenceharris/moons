@@ -29,17 +29,11 @@ const useNav = () => {
 const NavProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isNavOpen, setIsNavOpen] = useState<boolean>(false);
   const [activeLink, setActiveLink] = useState<string>("home");
-  const isMobile = window.matchMedia("max-width: 768px");
   const navigate = useNavigate();
   useEffect(() => {
     closeNav();
   }, [navigate]);
 
-  // useEffect(() => {
-  //   if (!isMobile) {
-  //     closeNav();
-  //   }
-  // }, [isMobile]);
   const openNav = () => {
     const nav = document.getElementById("nav");
     nav?.classList.add("open");

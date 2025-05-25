@@ -1,7 +1,7 @@
 .seasonal-picks-container {
-  width: 100%;
   height: 100vh;
   overflow: hidden;
+  margin-top: 30px;
 }
 .seasonal-grid button {
   z-index: 10;
@@ -24,12 +24,14 @@
 .image-middle-bottom {
   grid-area: middle-bottom;
   width: 100%;
+
   height: auto;
 }
 
 .image-right {
   grid-area: right;
   width: 100%;
+
   object-fit: cover;
   z-index: 0;
 }

@@ -161,6 +161,8 @@ body {
   flex: 1;
 }
 .content-body {
+  width: 100%;
+
   margin-top: 30px;
   max-width: 700px;
 }
@@ -249,6 +251,10 @@ input[type="checkbox"]:checked::after {
 }
 
 section {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
   margin-top: 40px;
 }
 

@@ -13,13 +13,13 @@ const Home: React.FC = () => {
       <div>
         {/* <HomeBanner srcset={[bannerImage3, bannerImage1, bannerImage2]} /> */}
 
-        <section id="featured">
+        {/* <section id="featured">
           <h2>Featured</h2>
           <div className="content-row">
-            {/* <img src={require("../../assets/images/featured1.jpeg")} alt="" />
-            <img src={require("../../assets/images/featured2.jpeg")} alt="" /> */}
+            <img src={require("../../assets/images/featured1.jpeg")} alt="" />
+            <img src={require("../../assets/images/featured2.jpeg")} alt="" />
           </div>
-        </section>
+        </section> */}
 
         <section id="new-arrivals">
           <h2>New Arrivals </h2>
@@ -78,9 +78,7 @@ const Home: React.FC = () => {
         <section id="seasonal-picks">
           <h2>Seasonal Picks</h2>
 
-          <div className="content-body">
-            <SeasonalPicks />
-          </div>
+          <SeasonalPicks />
         </section>
 
         <section id="mailing-list">

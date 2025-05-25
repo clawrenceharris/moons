@@ -5,7 +5,6 @@ interface UseAnimationToggleProps {
   duration?: number;
 }
 const useAnimationToggle = ({ value, duration }: UseAnimationToggleProps) => {
-  const [endValue, setEndValue] = useState<boolean>(value);
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   useEffect(() => {
     setIsAnimating(true);
