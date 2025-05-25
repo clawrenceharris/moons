@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductBrand as BrandType } from "../../../../shared/types";
+import { ProductBrand as BrandType } from "../../../../types";
 import "./Brand.css";
 interface BrandProps {
   brand: BrandType;

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { useCartStore } from "../../stores";
 import "./CartToast.css";
-import { CartItem } from "../../../../shared/types";
+import { CartItem } from "../../../../types";
 import { assets } from "../../assets";
 import { useNavigate } from "react-router-dom";
 export default function CartToast() {

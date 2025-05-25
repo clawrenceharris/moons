@@ -5,7 +5,7 @@ import {
   ProductFlag,
   ProductImage,
   ProductVariants,
-} from "../../../shared/types";
+} from "../../../types";
 import api from "./axios";
 
 export const fetchProductById = async (id: number): Promise<Product> => {

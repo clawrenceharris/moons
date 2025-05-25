@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../db/connection";
-import { User } from "../../shared/types/user";
+import { User } from "../../../types/user";
 
 export const getUser = (req: Request, res: Response) => {
   const q = "SELECT * FROM users WHERE user_id = ?";

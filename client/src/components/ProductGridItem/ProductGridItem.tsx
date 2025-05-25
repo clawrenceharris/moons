@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ProductGridItem.css";
-import { Product } from "../../../../shared/types";
+import { Product } from "../../../../types";
 import "../../styles/shared/_product.css";
 import { formatCategory, formatCurrency } from "../../utils";
 import { useShop } from "../../context";

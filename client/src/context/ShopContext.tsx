@@ -11,7 +11,7 @@ import {
   ProductBrand,
   ProductCategory,
   ProductFlag,
-} from "../../../shared/types";
+} from "../../../types";
 import { fetchAllProducts } from "../api/shop";
 import {
   fetchAllBrands,

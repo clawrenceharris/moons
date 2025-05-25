@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { db } from "../db/connection";
-import { Product, ProductCategory, ProductFlag } from "../../shared/types";
+import { db } from "../db";
+import { Product } from "../../../types";
 export async function getFullProductById(id: number): Promise<Product | null> {
   const [products]: any = await db.promise().query(
     `SELECT * FROM products WHERE published = TRUE AND is_archived = FALSE AND 

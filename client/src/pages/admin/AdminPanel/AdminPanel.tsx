@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Product } from "../../../../../shared/types";
+import { Product } from "../../../../../types";
 import { ProductGridItem, SearchBar } from "../../../components";
 import { useNavigate } from "react-router-dom";
 import {

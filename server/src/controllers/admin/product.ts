@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { db } from "../../db/connection";
 import { normalizeSlug } from "../../utils";
-import { ProductImage } from "../../../shared/types";
 import { getFullProductById } from "../product";
 export const getAllProducts = async (req: Request, res: Response) => {
   try {
@@ -147,7 +146,7 @@ export const updateProductCategory = (req: Request, res: Response) => {
 };
 export const addProductImage = (req: Request, res: Response) => {
   const { id } = req.params;
-  const { imageUrl, altText }: ProductImage = req.body;
+  const { imageUrl, altText } = req.body;
 
   const query = `
     INSERT INTO product_images (product_id, image_url, alt_text)

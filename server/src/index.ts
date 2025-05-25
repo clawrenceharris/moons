@@ -7,7 +7,7 @@ import {
   shopRoutes,
   searchRoutes,
   tagRoutes,
-} from "./routes/";
+} from "./routes";
 import cors, { CorsOptions } from "cors";
 import cookieParser from "cookie-parser";
 import { adminProductRoutes } from "./routes/admin";

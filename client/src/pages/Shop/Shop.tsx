@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Product as ProductType } from "../../../../shared/types";
+import { Product as ProductType } from "../../../../types";
 import { ProductGridItem, SearchBar } from "../../components";
 import { formatCategory } from "../../utils";
 import "./Shop.css";

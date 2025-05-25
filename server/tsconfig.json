@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "module": "CommonJS",
     "outDir": "dist",
+    "rootDir": "../",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": false,
@@ -12,6 +13,5 @@
     "noEmit": true,
     "skipDefaultLibCheck": true
   },
-
-  "include": ["controllers", "db", "routes", "*.ts"]
+  "include": ["src", "../types"]
 }

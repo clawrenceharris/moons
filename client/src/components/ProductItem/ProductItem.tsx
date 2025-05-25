@@ -1,40 +1,25 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { formatCategory, formatCurrency } from "../../utils";
 import "./ProductItem.css";
-import { Product } from "../../../../shared/types";
+import { Product } from "../../../../types";
 import { useCartStore } from "../../stores";
 interface ProductItemProps {
   product: Product;
 }
 function ProductItem({ product }: ProductItemProps) {
-  const [showMoreSizes, setShowMoreSizes] = useState(false);
-  const [selectedSize, setSelectedSize] = useState<string | null>(null);
-  // const [selectedColor, setSelectedColor] = useState<string | null>(null);
   const [error, setError] = useState("");
-  // const [imageIndex, setImageIndex] = useState(0);
-  const navigate = useNavigate();
   const addItem = useCartStore((s) => s.addItem);
 
   const handleAddToCart = () => {
     setError("");
-    if (!selectedSize && product.variants?.sizes.length > 0) {
-      return setError("Please select a size");
-    }
 
     addItem({
       ...product,
-      size: selectedSize || "",
+      size: "M",
       quantity: 1,
 
-      color: selectedSize || "",
+      color: "",
     });
-  };
-
-  const onSizePress = (size: string) => {
-    if (product.variants?.sizes.includes(size)) {
-      setSelectedSize(size);
-    }
   };
 
   return (
@@ -52,15 +37,6 @@ function ProductItem({ product }: ProductItemProps) {
           src={product.images[0].imageUrl}
           alt={product.images[0].altText || product.name}
         />
-
-        <div className="thumbnail-images">
-          {/* {product.srcset.length > 1 &&
-            product.srcset.map((item, index) => (
-              <button key={index} onClick={() => setImageIndex(index)}>
-                <img className="img-thumbnail" src={item} alt={product.name} />
-              </button>
-            ))} */}
-        </div>
       </div>
 
       <div className="product-bottom">
@@ -83,30 +59,30 @@ function ProductItem({ product }: ProductItemProps) {
           <p className="price">{formatCurrency(product.price)}</p>
         )}
 
-        <div className="options">
+        {/* <div className="options">
           <div>
             <h4>
               Colors <span>(Please Select)</span>
             </h4>
             <div className="colors">
-              {/* {colors.map((item: string, index: number) => (
+              {product.variants?.colors.map((item: string, index: number) => (
                 <div
                   key={index}
-                  // className={
-                  //   selectedColor === item ? "active-color-container" : ""
-                  // }
+                  className={
+                    selectedColor === item ? "active-color-container" : ""
+                  }
                 >
                   <button
                     onClick={() => setSelectedColor(item)}
-                    // className={
-                    //   selectedColor === item
-                    //     ? "color-box active-color"
-                    //     : "color-box"
-                    // }
+                    className={
+                      selectedColor === item
+                        ? "color-box active-color"
+                        : "color-box"
+                    }
                     style={{ backgroundColor: item }}
                   />
                 </div>
-              ))} */}
+              ))}
             </div>
           </div>
 
@@ -159,7 +135,7 @@ function ProductItem({ product }: ProductItemProps) {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="add-to-cart-container">
           <p className="error">{error} </p>
