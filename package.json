@@ -1,0 +1,11 @@
+{
+  "name": "moons-footwear-fullstack",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "heroku-postbuild": "cd client && npm install && npm run build"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
