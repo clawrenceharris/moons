@@ -40,6 +40,8 @@ tmp/
 temp/
 client/dist/
 server/dist/
+
+client/build/
 # =========================
 # TypeScript
 # =========================

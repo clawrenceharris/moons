@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es2020",
     "jsx": "react-jsx",
+    "rootDir": "src",
     "module": "ESNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,

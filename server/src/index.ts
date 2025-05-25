@@ -1,4 +1,6 @@
 import express from "express";
+import path from "path";
+
 import {
   userRoutes,
   authRoutes,
@@ -36,8 +38,16 @@ app.use("/api/search", searchRoutes);
 app.use("/api/admin/product", adminProductRoutes);
 app.use("/api/tags", tagRoutes);
 
-app.use("/api/favorites", favoriteRoutes);
 app.use("/api/auth", authRoutes);
 app.listen(process.env.PORT || PORT, () => {
-  console.log("API working!");
+  console.log(`Server running on port ${PORT}`);
+});
+
+const clientBuildPath = path.join(__dirname, "../../client/build");
+app.use(express.static(clientBuildPath));
+
+// For any routes not handled by the API, return React index.html
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientBuildPath, "index.html"));
 });
