@@ -8,7 +8,6 @@ export const getAllProducts = async (req: Request, res: Response) => {
     const products = await Promise.all(
       p.map((p: any) => getFullProductById(p.id))
     );
-    // Filter out any nulls (in case a product was deleted between queries)
     res.json(products);
   } catch (err: any) {
     res.status(500).json({ error: err.message });
@@ -101,8 +100,6 @@ export const setProductFlags = (req: Request, res: Response) => {
       res.json({ success: true, error: "Flags cleared." });
       return;
     }
-
-    // Use placeholders instead of interpolated strings
     const insertQuery = `
       INSERT INTO product_product_flags (product_id, flag_id)
       SELECT ?, id FROM product_flags WHERE name = ?`;
@@ -257,7 +254,6 @@ export const addProduct = async (req: Request, res: Response) => {
   }
 
   try {
-    // 1. Get or insert brand
     const [brandRow] = await db
       .promise()
       .query(
@@ -269,7 +265,6 @@ export const addProduct = async (req: Request, res: Response) => {
       .query(`SELECT id FROM brands WHERE name = ?`, [normalizeSlug(brand)]);
     const brandId = (brandIdResult as any)[0]?.id;
 
-    // 2. Get subcategory ID
     const [subcatRows] = await db
       .promise()
       .query(`SELECT id FROM subcategories WHERE name = ?`, [subcategory]);
@@ -281,7 +276,6 @@ export const addProduct = async (req: Request, res: Response) => {
     }
     const subcategoryId = (subcatRows as any)[0].id;
 
-    // 3. Insert product
     const [insertResult] = await db.promise().query(
       `INSERT INTO products (name, price, description, brand_id, subcategory_id, stock_quantity)
        VALUES (?, ?, ?, ?, ?, ?)`,
