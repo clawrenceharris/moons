@@ -19,7 +19,7 @@ const PORT = 8800;
 app.use(express.json());
 const CLIENT_URL =
   process.env.NODE_ENV === "production"
-    ? "https://clawrenceharris.github.io/moons_footwear/" // <-- This is currently wrong
+    ? process.env.CLIENT_PRODUCTION_URL
     : "http://localhost:3000";
 
 const corsOptions: CorsOptions = {
