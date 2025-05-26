@@ -93,11 +93,13 @@ export const getProduct = async (req: Request, res: Response) => {
 
   try {
     if (!id) {
-      return res.status(400).json({ error: "No Id provided" });
+      res.status(400).json({ error: "No Id provided" });
+      return;
     }
     const product = await getFullProductById(Number(id));
     if (!product) {
-      return res.status(404).json({ error: "Product not found" });
+      res.status(404).json({ error: "Product not found" });
+      return;
     }
     res.json(product);
   } catch (err: any) {
@@ -122,10 +124,12 @@ export const getProductsBySearch = async (req: Request, res: Response) => {
       const products = await Promise.all(
         p.map((p: any) => getFullProductById(p.id))
       );
-      return res.json(products.filter(Boolean));
+      res.json(products.filter(Boolean));
+      return;
     } catch (err: any) {
       console.error("Error in getProductsBySearch (no query):", err);
-      return res.status(500).json({ error: err.message });
+      res.status(500).json({ error: err.message });
+      return;
     }
   }
 
