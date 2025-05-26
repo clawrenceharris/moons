@@ -44,7 +44,7 @@ app.use("/api/search", searchRoutes);
 app.use("/api/admin/product", adminProductRoutes);
 app.use("/api/tags", tagRoutes);
 
-app.use("/api/auth", authRoutes);
+// app.use("/api/auth", authRoutes);
 
 const checkDbConnection = async (req: Request, res: Response) => {
   if (!process.env.JAWSDB_URL) {
