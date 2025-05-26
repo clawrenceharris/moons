@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { db } from "../db/connection";
+import { db } from "../db";
 
 export const getUser = (req: Request, res: Response) => {
   const q = "SELECT * FROM users WHERE user_id = ?";

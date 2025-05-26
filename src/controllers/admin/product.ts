@@ -1,4 +1,4 @@
-import { db } from "../../db/connection";
+import { db } from "../../db";
 import { normalizeSlug } from "../../utils";
 import { getFullProductById } from "../product";
 import { Request, Response } from "express";
