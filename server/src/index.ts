@@ -43,5 +43,6 @@ app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
-const clientBuildPath = path.join(__dirname, "../../client/build");
-app.use(express.static(clientBuildPath));
+app.get("/", (req, res) => {
+  res.send("🚀 Moons Footwear API is running.");
+});

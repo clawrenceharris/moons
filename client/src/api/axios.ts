@@ -1,7 +1,7 @@
 import axios from "axios";
-
+const API_BASE = "https://moons-footwear-02391a391225.herokuapp.com/";
 const api = axios.create({
-  baseURL: "http://localhost:8800/api",
+  baseURL: API_BASE,
   withCredentials: false,
 });
 
