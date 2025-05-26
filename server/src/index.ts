@@ -45,9 +45,3 @@ app.listen(process.env.PORT || PORT, () => {
 
 const clientBuildPath = path.join(__dirname, "../../client/build");
 app.use(express.static(clientBuildPath));
-
-// For any routes not handled by the API, return React index.html
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(clientBuildPath, "index.html"));
-});
