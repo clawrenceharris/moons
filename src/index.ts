@@ -14,21 +14,26 @@ import cors, { CorsOptions } from "cors";
 import { adminProductRoutes } from "./routes/admin";
 
 const app = express();
-const PORT = 8800;
-// middlewares
-app.use(express.json());
-const CLIENT_URL =
-  process.env.NODE_ENV === "production"
-    ? process.env.CLIENT_PRODUCTION_URL
-    : "http://localhost:3000";
+const PORT = process.env.PORT || 8800;
+const allowedOrigins = [
+  "http://localhost:3000",
+  process.env.CLIENT_PRODUCTION_URL,
+];
 
 const corsOptions: CorsOptions = {
-  origin: CLIENT_URL,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
   credentials: false,
   allowedHeaders: "Content-Type, Authorization, Cookie",
 };
 
+app.use(express.json());
 app.use(cors(corsOptions));
 
 //routes
@@ -40,7 +45,7 @@ app.use("/api/admin/product", adminProductRoutes);
 app.use("/api/tags", tagRoutes);
 
 app.use("/api/auth", authRoutes);
-app.listen(process.env.PORT || PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
