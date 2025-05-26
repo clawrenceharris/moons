@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { formatCurrency } from "../../utils";
 import { useCartStore } from "../../stores";
 
@@ -23,7 +23,10 @@ const Checkout: React.FC = () => {
       "Today only — 10% off your purshase — Use promo code MYSTERYDEAL at checkout!"
     );
   };
-
+  useEffect(() => {
+    setCompletedSections([]);
+    setShipping(0);
+  }, []);
   const AddressInfo = ({ id }: { id: string }) => {
     return (
       <form id={id}>

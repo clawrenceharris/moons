@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Product } from "../../../../../types";
 import { ProductGridItem, SearchBar } from "../../../components";
 import { useNavigate } from "react-router-dom";
 import {
@@ -7,6 +6,7 @@ import {
   deleteProduct,
   fetchProducts,
 } from "../../../api/admin/products";
+import { Product } from "../../../types";
 
 const AdminPanel = () => {
   const [products, setProducts] = useState<Product[]>([]);
