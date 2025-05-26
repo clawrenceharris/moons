@@ -1,9 +1,0 @@
-.search-container {
-  padding: 30px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.search-container h1 {
-  font-size: 2.7rem;
-}

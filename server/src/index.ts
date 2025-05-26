@@ -11,24 +11,25 @@ import {
   tagRoutes,
 } from "./routes";
 import cors, { CorsOptions } from "cors";
-import cookieParser from "cookie-parser";
 import { adminProductRoutes } from "./routes/admin";
 
 const app = express();
 const PORT = 8800;
 // middlewares
 app.use(express.json());
+const CLIENT_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://clawrenceharris.github.io/moons_footwear/" // <-- This is currently wrong
+    : "http://localhost:3000";
 
 const corsOptions: CorsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: CLIENT_URL,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
   credentials: false,
   allowedHeaders: "Content-Type, Authorization, Cookie",
 };
 
 app.use(cors(corsOptions));
-
-app.use(cookieParser());
 
 //routes
 app.use("/api/users", userRoutes);

@@ -1,7 +1,8 @@
-import { Request, Response } from "express";
 import { db } from "../../db/connection";
 import { normalizeSlug } from "../../utils";
 import { getFullProductById } from "../product";
+import { Request, Response } from "express";
+
 export const getAllProducts = async (req: Request, res: Response) => {
   try {
     const [p]: any = await db.promise().query(`SELECT id FROM products`);
