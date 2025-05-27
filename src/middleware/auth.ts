@@ -1,3 +1,4 @@
+// middleware/auth.ts
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
@@ -8,46 +9,57 @@ declare module "express-serve-static-core" {
   }
 }
 
-const JWT_SECRET =
-  process.env.JWT_SECRET || "your_fallback_secret_key_if_not_set";
+const JWT_SECRET = process.env.JWT_SECRET || "DEV_SECRET";
 
 const auth = (req: Request, res: Response, next: NextFunction) => {
-  // Get token from header
-  const token = req.header("Authorization");
+  // Get credentials from header (assuming Authorization header for JWTs)
+  const authHeader = req.header("Authorization");
 
-  // Check if no token
-  if (!token) {
-    res.status(401).json({ message: "No token, authorization denied." });
+  // Check if no authorization header is present
+  if (!authHeader) {
+    res.status(401).json({
+      message:
+        "Authentication required. Please log in to access this resource.",
+    });
     return;
   }
 
-  // Tokens are usually sent as "Bearer YOUR_TOKEN_STRING". Split it.
-  const tokenParts = token.split(" ");
-  if (tokenParts.length !== 2 || tokenParts[0] !== "Bearer") {
-    res.status(401).json({ message: 'Token format is "Bearer <token>".' });
+  // Expecting format "Bearer <credentials>"
+  const credentialsParts = authHeader.split(" ");
+  if (credentialsParts.length !== 2 || credentialsParts[0] !== "Bearer") {
+    res
+      .status(401)
+      .json({ message: "Invalid authentication format. Please log in again." });
     return;
   }
+
+  const userCredentials = credentialsParts[1]; // This is the JWT
 
   try {
-    const decoded: any = jwt.verify(tokenParts[1], JWT_SECRET); // Verify the token
+    const decoded: any = jwt.verify(userCredentials, JWT_SECRET); // Verify the credentials
 
-    // Attach user from token payload to the request object
+    // Attach user from payload to the request object
     req.user = decoded.user;
     next(); // Proceed to the next middleware/route handler
   } catch (err: any) {
-    console.error("Token verification failed:", err);
-    // Handle specific JWT errors
+    console.error("Credentials verification failed:", err); // Log the technical error for debugging
     if (err.name === "TokenExpiredError") {
-      res.status(401).json({ message: "Token expired." });
+      res
+        .status(401)
+        .json({ message: "Your session has expired. Please log in again." });
       return;
     }
     if (err.name === "JsonWebTokenError") {
-      res.status(401).json({ message: "Invalid token." });
+      res.status(401).json({
+        message:
+          "Authentication failed. Your credentials are invalid. Please log in again.",
+      });
       return;
     }
-    res
-      .status(500)
-      .json({ message: "Server error during token verification." });
+    // Generic fallback for other server-side verification issues
+    res.status(500).json({
+      message: "An internal server error occurred during authentication.",
+    });
   }
 };
 
