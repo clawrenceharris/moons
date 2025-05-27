@@ -15,9 +15,15 @@ const allowedOrigins = [
 ];
 
 const corsOptions: CorsOptions = {
-  origin: "*",
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.filter(Boolean).indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  credentials: false,
+  credentials: true,
   allowedHeaders: "Content-Type, Authorization, Cookie",
 };
 
@@ -32,6 +38,7 @@ const startServer = async () => {
     app.use("/api/search", searchRoutes);
     app.use("/api/admin/product", adminProductRoutes);
     app.use("/api/tags", tagRoutes);
+    app.use("/api/auth", auth);
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });

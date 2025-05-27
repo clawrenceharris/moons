@@ -16,7 +16,7 @@ export async function executeQuery<T>(query: string, values: any[] = []) {
     throw error;
   } finally {
     if (connection) {
-      connection.release(); // always release the connection back to the pool
+      connection.release();
     }
   }
 }
