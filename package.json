@@ -10,6 +10,7 @@
   },
   "keywords": [],
   "author": "",
+  "module": "node18",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
