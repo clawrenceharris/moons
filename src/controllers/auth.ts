@@ -7,9 +7,9 @@ const JWT_SECRET = process.env.JWT_SECRET || "DEV_SECRET";
 
 // Register a new user
 export const registerUser = async (req: Request, res: Response) => {
-  const { username, email, password } = req.body;
+  const { name, email, password } = req.body;
 
-  if (!username || !email || !password) {
+  if (!name || !email || !password) {
     res.status(400).json({ error: "Please enter all required fields." });
     return;
   }
@@ -17,8 +17,8 @@ export const registerUser = async (req: Request, res: Response) => {
   try {
     // Check if user already exists
     const existingUsers = await executeQuery<{ id: number }>(
-      "SELECT id FROM users WHERE username = ? OR email = ?",
-      [username, email]
+      "SELECT id FROM users WHERE name = ? OR email = ?",
+      [name, email]
     );
 
     if (existingUsers.length > 0) {
@@ -32,8 +32,8 @@ export const registerUser = async (req: Request, res: Response) => {
 
     // Store user in database
     const result = await executeQuery<any>(
-      "INSERT INTO users (username, email, password_hash) VALUES (?, ?, ?)",
-      [username, email, passwordHash]
+      "INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)",
+      [name, email, passwordHash]
     );
 
     res.status(201).json({
@@ -61,11 +61,11 @@ export const loginUser = async (req: Request, res: Response) => {
     // Find user by email
     const users = await executeQuery<{
       id: number;
-      username: string;
+      name: string;
       email: string;
       password_hash: string;
     }>(
-      "SELECT id, username, email, password_hash FROM users WHERE email = ? LIMIT 1",
+      "SELECT id, name, email, password_hash FROM users WHERE email = ? LIMIT 1",
       [email]
     );
 
@@ -88,7 +88,7 @@ export const loginUser = async (req: Request, res: Response) => {
     const payload = {
       user: {
         id: user.id,
-        username: user.username,
+        name: user.name,
         email: user.email,
       },
     };

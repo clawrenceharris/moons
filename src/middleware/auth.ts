@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 // Extend the Request interface to include the user property
 declare module "express-serve-static-core" {
   interface Request {
-    user?: { id: number; username: string; email: string }; // Adjust type based on your JWT payload
+    user?: { id: number; name: string; email: string }; // Adjust type based on your JWT payload
   }
 }
 
