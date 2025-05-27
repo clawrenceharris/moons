@@ -12,7 +12,6 @@ declare module "express-serve-static-core" {
 const JWT_SECRET = process.env.JWT_SECRET || "DEV_SECRET";
 
 const auth = (req: Request, res: Response, next: NextFunction) => {
-  // Get credentials from header (assuming Authorization header for JWTs)
   const authHeader = req.header("Authorization");
 
   // Check if no authorization header is present

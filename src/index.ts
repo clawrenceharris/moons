@@ -1,7 +1,13 @@
 import express, { Request, Response } from "express";
 import path from "path";
 
-import { productRoutes, shopRoutes, searchRoutes, tagRoutes } from "./routes";
+import {
+  productRoutes,
+  shopRoutes,
+  searchRoutes,
+  tagRoutes,
+  authRoutes,
+} from "./routes";
 import cors, { CorsOptions } from "cors";
 import { adminProductRoutes } from "./routes/admin";
 import { initializeDatabase } from "./db";
@@ -38,7 +44,7 @@ const startServer = async () => {
     app.use("/api/search", searchRoutes);
     app.use("/api/admin/product", adminProductRoutes);
     app.use("/api/tags", tagRoutes);
-    app.use("/api/auth", auth);
+    app.use("/api/auth", authRoutes);
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
