@@ -17,12 +17,12 @@ export const registerUser = async (req: Request, res: Response) => {
   try {
     // Check if user already exists
     const existingUsers = await executeQuery<{ id: number }>(
-      "SELECT id FROM users WHERE name = ? OR email = ?",
+      "SELECT id FROM users WHERE email = ?",
       [name, email]
     );
 
     if (existingUsers.length > 0) {
-      res.status(409).json({ error: "Username or email already exists." });
+      res.status(409).json({ error: "This email already exists." });
       return;
     }
 
