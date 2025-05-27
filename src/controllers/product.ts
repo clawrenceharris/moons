@@ -118,7 +118,7 @@ export const getProductsBySearch = async (req: Request, res: Response) => {
       const pool = getDatabasePool();
       connection = await pool.getConnection();
       const [p]: any = await connection.execute(
-        `SELECT id FROM products WHERE published = TRUE AND is_archived = FALSE`
+        `SELECT DISTINCT id FROM products WHERE published = TRUE AND is_archived = FALSE`
       );
       const products = await Promise.all(
         p.map((p: any) => getFullProductById(p.id))

@@ -5,6 +5,7 @@ import { productRoutes, shopRoutes, searchRoutes, tagRoutes } from "./routes";
 import cors, { CorsOptions } from "cors";
 import { adminProductRoutes } from "./routes/admin";
 import { initializeDatabase } from "./db";
+import auth from "./middleware/auth";
 
 const app = express();
 const PORT = process.env.PORT || 8800;
@@ -14,13 +15,7 @@ const allowedOrigins = [
 ];
 
 const corsOptions: CorsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
   credentials: false,
   allowedHeaders: "Content-Type, Authorization, Cookie",
@@ -37,7 +32,6 @@ const startServer = async () => {
     app.use("/api/search", searchRoutes);
     app.use("/api/admin/product", adminProductRoutes);
     app.use("/api/tags", tagRoutes);
-
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });

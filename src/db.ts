@@ -4,10 +4,7 @@ import { PoolConnection } from "mysql2/promise";
 let pool: mysql.Pool;
 
 // Helper function to get a connection from the pool, execute a single query, and release it
-export async function executeQuery<T>(
-  query: string,
-  values: any[] = []
-): Promise<T[]> {
+export async function executeQuery<T>(query: string, values: any[] = []) {
   const pool = getDatabasePool();
   let connection: PoolConnection | undefined;
   try {
@@ -25,9 +22,6 @@ export async function executeQuery<T>(
 }
 export async function initializeDatabase() {
   try {
-    if (!process.env.JAWSDB_URL) {
-      throw new Error("JAWSDB_URL environment variable is not set.");
-    }
     pool = mysql.createPool({
       uri: process.env.JAWSDB_URL,
       waitForConnections: true,
