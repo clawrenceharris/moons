@@ -1,16 +1,7 @@
 import express, { Request, Response } from "express";
 import path from "path";
 
-import {
-  userRoutes,
-  authRoutes,
-  favoriteRoutes,
-  productRoutes,
-  shopRoutes,
-  searchRoutes,
-  tagRoutes,
-  reviewRoutes,
-} from "./routes";
+import { productRoutes, shopRoutes, searchRoutes, tagRoutes } from "./routes";
 import cors, { CorsOptions } from "cors";
 import { adminProductRoutes } from "./routes/admin";
 import { initializeDatabase } from "./db";
@@ -41,28 +32,24 @@ const startServer = async () => {
   try {
     await initializeDatabase();
     //routes
-    // app.use("/api/users", userRoutes);
     app.use("/api/shop", shopRoutes);
     app.use("/api/product", productRoutes);
     app.use("/api/search", searchRoutes);
     app.use("/api/admin/product", adminProductRoutes);
     app.use("/api/tags", tagRoutes);
 
-    // app.use("/api/auth", authRoutes);
-
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
     app.get("/", (req, res) => {
-      res.send("🚀 Moons Footwear API is running.");
+      res.send("Moons Footwear API is running.");
     });
   } catch (error) {
-    // If database initialization fails, log the error and exit the process
     console.error(
       "FATAL ERROR: Failed to start server due to database initialization error:",
       error
     );
-    process.exit(1); // This will stop the Heroku dyno
+    process.exit(1);
   }
 };
 

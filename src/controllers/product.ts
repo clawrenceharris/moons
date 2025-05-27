@@ -120,7 +120,6 @@ export const getProductsBySearch = async (req: Request, res: Response) => {
       const [p]: any = await connection.execute(
         `SELECT id FROM products WHERE published = TRUE AND is_archived = FALSE`
       );
-      connection.release(); // Release early
       const products = await Promise.all(
         p.map((p: any) => getFullProductById(p.id))
       );
@@ -130,6 +129,10 @@ export const getProductsBySearch = async (req: Request, res: Response) => {
       console.error("Error in getProductsBySearch (no query):", err);
       res.status(500).json({ error: err.message });
       return;
+    } finally {
+      if (connection) {
+        connection.release();
+      }
     }
   }
 
