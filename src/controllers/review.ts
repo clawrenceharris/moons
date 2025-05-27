@@ -1,3 +1,3 @@
 import { Request, Response } from "express";
 
-export const getReview = (req: Request, res: Response) => {};
+export const getReviews = (req: Request, res: Response) => {};

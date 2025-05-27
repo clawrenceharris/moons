@@ -9,6 +9,7 @@ import {
   shopRoutes,
   searchRoutes,
   tagRoutes,
+  reviewRoutes,
 } from "./routes";
 import cors, { CorsOptions } from "cors";
 import { adminProductRoutes } from "./routes/admin";
@@ -37,23 +38,32 @@ const corsOptions: CorsOptions = {
 app.use(express.json());
 app.use(cors(corsOptions));
 const startServer = async () => {
-  await initializeDatabase();
-  //routes
-  // app.use("/api/users", userRoutes);
-  app.use("/api/shop", shopRoutes);
-  app.use("/api/product", productRoutes);
-  app.use("/api/search", searchRoutes);
-  app.use("/api/admin/product", adminProductRoutes);
-  app.use("/api/tags", tagRoutes);
+  try {
+    await initializeDatabase();
+    //routes
+    // app.use("/api/users", userRoutes);
+    app.use("/api/shop", shopRoutes);
+    app.use("/api/product", productRoutes);
+    app.use("/api/search", searchRoutes);
+    app.use("/api/admin/product", adminProductRoutes);
+    app.use("/api/tags", tagRoutes);
 
-  // app.use("/api/auth", authRoutes);
+    // app.use("/api/auth", authRoutes);
 
-  app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-  app.get("/", (req, res) => {
-    res.send("🚀 Moons Footwear API is running.");
-  });
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
+    });
+    app.get("/", (req, res) => {
+      res.send("🚀 Moons Footwear API is running.");
+    });
+  } catch (error) {
+    // If database initialization fails, log the error and exit the process
+    console.error(
+      "FATAL ERROR: Failed to start server due to database initialization error:",
+      error
+    );
+    process.exit(1); // This will stop the Heroku dyno
+  }
 };
 
 startServer();
