@@ -92,7 +92,7 @@ export const loginUser = async (req: Request, res: Response) => {
         id: user.id,
         name: user.name,
         email: user.email,
-        isAdmin: user.is_admin,
+        isAdmin: Boolean(user.is_admin),
       },
     };
 
