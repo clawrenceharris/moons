@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import { executeQuery } from "../db"; // Assuming executeQuery is available
+import { User } from "../types/user";
 
 const JWT_SECRET = process.env.JWT_SECRET || "DEV_SECRET";
 
@@ -85,11 +86,12 @@ export const loginUser = async (req: Request, res: Response) => {
     }
 
     // Generate JWT Token
-    const payload = {
+    const payload: { user: User } = {
       user: {
         id: user.id,
         name: user.name,
         email: user.email,
+        isAdmin: user.is_admin,
       },
     };
 
