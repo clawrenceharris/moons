@@ -11,9 +11,9 @@ import {
 import cors, { CorsOptions } from "cors";
 import { adminProductRoutes } from "./routes/admin";
 import { initializeDatabase } from "./db";
-import auth from "./middleware/auth";
 
 const app = express();
+
 const PORT = process.env.PORT || 8800;
 const allowedOrigins = [
   "http://localhost:3000",
@@ -29,10 +29,9 @@ const corsOptions: CorsOptions = {
     }
   },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  credentials: true,
+  credentials: false,
   allowedHeaders: "Content-Type, Authorization, Cookie",
 };
-
 app.use(express.json());
 app.use(cors(corsOptions));
 const startServer = async () => {
