@@ -11,29 +11,47 @@ import {
 import cors, { CorsOptions } from "cors";
 import { adminProductRoutes } from "./routes/admin";
 import { initializeDatabase } from "./db";
-
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 
 const PORT = process.env.PORT || 8800;
+const CLIENT_PRODUCTION_URL = process.env.CLIENT_PRODUCTION_URL;
+
 const allowedOrigins = [
   "http://localhost:3000",
-  process.env.CLIENT_PRODUCTION_URL,
+  ...(CLIENT_PRODUCTION_URL ? [CLIENT_PRODUCTION_URL] : []),
 ];
 
 const corsOptions: CorsOptions = {
   origin: function (origin, callback) {
-    if (!origin || allowedOrigins.filter(Boolean).includes(origin)) {
+    if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error("Not allowed by CORS"));
     }
   },
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
-  credentials: false,
+  credentials: true,
   allowedHeaders: "Content-Type, Authorization, Cookie",
 };
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 app.use(cors(corsOptions));
+
+app.use(
+  (
+    err: any,
+    req: express.Request,
+    res: express.Response,
+    next: express.NextFunction
+  ) => {
+    console.error(err.stack);
+    res.status(500).send("Something broke!");
+  }
+);
+
 const startServer = async () => {
   try {
     await initializeDatabase();
