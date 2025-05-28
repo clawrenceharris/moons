@@ -64,7 +64,6 @@ export const loginUser = async (req: Request, res: Response) => {
       id: number;
       name: string;
       email: string;
-      is_admin: boolean;
       password_hash: string;
     }>(
       "SELECT id, name, email, password_hash FROM users WHERE email = ? LIMIT 1",
@@ -92,7 +91,6 @@ export const loginUser = async (req: Request, res: Response) => {
         id: user.id,
         name: user.name,
         email: user.email,
-        isAdmin: user.is_admin,
       },
     };
 
