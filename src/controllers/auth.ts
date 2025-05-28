@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { executeQuery } from "../db"; // Assuming executeQuery is available
+import { executeQuery } from "../db";
 import { User } from "../types/user";
 
 const JWT_SECRET = process.env.JWT_SECRET || "DEV_SECRET";
@@ -101,7 +101,7 @@ export const loginUser = async (req: Request, res: Response) => {
         console.error("Error signing JWT:", err);
         return res
           .status(500)
-          .json({ error: "Server error generating token." }); // Keep return here as it's inside a callback
+          .json({ error: "Server error generating token." });
       }
       res.status(200).json({ message: "Logged in successfully!", token });
     });
